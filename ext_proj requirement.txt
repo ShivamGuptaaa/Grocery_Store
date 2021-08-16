@@ -1,0 +1,63 @@
+MULTI OUTLET STORE
+
+Functionality:-
+Store customers order respective of store location
+Register a customer
+search customers from customer list
+display order details
+display order histories according to store location
+display order history of customer
+input validation
+handle exceptions
+fetch data from JSON or SQL for product,customer,prices,etc(no hardcoding in c#)
+Can sort order history acc. to time,price,etc---(optional)
+Suggest items to customer based on order history---(optional)
+Save data to disk in JSON---(optional)
+Load few or all data from disk---(optional)
+display some stats based on order history---(optional)
+
+Structure/Layer:-
+Business Logic:
+Library classes
+domain classes(customer,order,store,products,etc)
+Independent of UI or input/output
+
+UI:
+Interactive console app
+Should only contain code related to display and input
+
+Data Access:
+Library classes
+Only data related logic(no business logic)
+contains scaffolded EF DbContext
+use repository pattern for separation of concerns
+
+Test:
+At least 10 test methods
+Use TDD for some of the application
+Focus on unit testing business logic; testing the console app is very low priority
+
+Object Model:- 
+Customer:
+Has first name, last name, etc.
+(optional: has a default store location to order from)
+
+Order:
+Has a store location
+Has a customer
+Has an order time (when the order was placed)
+Can contain multiple product types in the same order
+rejects orders with unreasonably high product quantities
+must have some additional business rules
+
+Location:
+Has an inventory
+Inventory decreases when orders are accepted
+Rejects orders that cannot be fulfilled with remaining inventory
+(optional: more than one inventory item decrements for a given product order, for at least one product)
+
+Technologies:- 
+C# / .NET
+Entity Framework
+Azure SQL Database
+xUnit, NUnit, or MSTest
