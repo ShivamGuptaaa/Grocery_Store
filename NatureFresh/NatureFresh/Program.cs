@@ -21,17 +21,17 @@ namespace NatureFresh
             Console.Write("\nPlease choose a Location to order -\n press <0> for Dadar\n press <1> for Thane\n press <2> for Panvel\n press <3> for Chembur\n press <4> for Goregaon");
             int locationOption = int.Parse(Console.ReadLine());
             if (locationOption == 0)
-                customer.location = Customer.Location.Dadar;
+                customer.Location = Convert.ToString(Location.Dadar);
             else if(locationOption == 1)
-                customer.location = Customer.Location.Thane;
+                customer.Location = Convert.ToString(Location.Thane);
             else if (locationOption == 2)
-                customer.location = Customer.Location.Panvel;
+                customer.Location = Convert.ToString(Location.Panvel);
             else if (locationOption == 3)
-                customer.location = Customer.Location.chembur;
+                customer.Location = Convert.ToString(Location.Chembur);
             else if (locationOption == 4)
-                customer.location = Customer.Location.Goregaon;
+                customer.Location = Convert.ToString(Location.Dadar);
 
-
+            Console.WriteLine($"{customer.Id} {customer.Name} {customer.Address} {customer.Pincode} {customer.MobNum} {customer.Location}");
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {}
+    "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {}
   },
   "projects": {
-    "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {
+    "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
+        "projectUniqueName": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
         "projectName": "NatureFresh",
-        "projectPath": "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
+        "projectPath": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\obj\\",
+        "outputPath": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

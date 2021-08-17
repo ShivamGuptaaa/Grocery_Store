@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NatureFresh
 {
@@ -20,8 +17,13 @@ namespace NatureFresh
                 id = value;
             }
         }
-       
-       
+        string location;
+        public string Location { 
+            get{return location; }
+
+          set{ location = value; } 
+        }
+
         string name;
         public string Name
         {
@@ -68,33 +70,27 @@ namespace NatureFresh
             }
         }
 
-        public List<string> chooseLocation()
-        {
-            List<string> loc = new List<string>();
-            loc.Add(Convert.ToString(Location.Dadar));
-            loc.Add(Convert.ToString(Location.Thane));
-            loc.Add(Convert.ToString(Location.Panvel));
-            loc.Add(Convert.ToString(Location.chembur));
-            return loc;
-        }
+        //public List<string> chooseLocation()
+        //{
+
+
+        //    return loc;
+        //}
+
+
+        //loc.Add(Convert.ToString(Location.Dadar));
+        //loc.Add(Convert.ToString(Location.Thane));
+        //loc.Add(Convert.ToString(Location.Panvel));
+        //loc.Add(Convert.ToString(Location.chembur));
 
         /*List<string> location = new List<string>();
         location.Add*/
 
-        public Location location { 
-            get
-            {
-                return location;
-            }
-            set
-            {
-                location = value;
-            } 
-          }
 
-        public enum Location
-        {
-            Dadar, Thane, Panvel, chembur, Goregaon
-        }
+        
+    }
+    public enum Location
+    {
+        Dadar, Thane, Panvel, Chembur, Goregaon
     }
 }
