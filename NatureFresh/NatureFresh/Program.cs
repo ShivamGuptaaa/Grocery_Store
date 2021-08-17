@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+using System;
 namespace NatureFresh
 {
     class Program
@@ -10,8 +8,6 @@ namespace NatureFresh
             int Id,PinCode,LocationNum,itemWeight,Unit, locationOption;
             string Name, Address, PhoneNum,Olocation; //Olocation=Outlet Location
 
-            //Validation val = new Validation();
-            //Console.Write(val.GetDetails());
             Customer customer = new Customer();
 
             Console.WriteLine("Enter ID");
@@ -46,7 +42,6 @@ namespace NatureFresh
             Unit = int.Parse(Console.ReadLine());
             customer.Unit = Unit;
 
-            
             switch (locationOption)
             {
 
