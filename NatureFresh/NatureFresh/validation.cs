@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-namespace NatureFresh
 
+namespace NatureFresh
 {
     class Validation
     {
@@ -34,7 +34,7 @@ namespace NatureFresh
                 Console.WriteLine("\nLocation not found! Try again...");
                 Console.WriteLine("\nPlease enter valid location ");
                 quantity = Console.ReadLine();
-                check = Array.Exists(location, x => x == loc);
+                check = Array.Exists(location, x => x == loc); //
             }
 
 

@@ -1,28 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-
 namespace NatureFresh
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-
-            Validation val = new Validation();
-            Console.Write("Please enter your name:");
-            val.name = Console.ReadLine();
-            Console.Write("Please enter item weight with quantity: ");
-            val.quantity = Console.ReadLine();
-            val.weightOf = Console.ReadLine();
-            Console.Write("\nPlease select store Location: \n1.Panvel\n2.Chembur\n3.Thane\n4.Goregaon\n5.Dadar\n");
-            val.loc = Console.ReadLine();
-            Console.Write("\nPlease enter your 10 digit mobile number:");
-            val.phoneNumber = Console.ReadLine();
-            Console.Write("\nPlease enter your pincode:");
-            val.pinCode = Console.ReadLine();
-
-            Console.Write(val.GetDetails());
             Customer customer = new Customer();
             Console.WriteLine("Enter ID");
             customer.Id = int.Parse(Console.ReadLine());
@@ -37,7 +19,7 @@ namespace NatureFresh
             Console.Write("\nPlease choose a Location to order -\n press <0> for Dadar\n press <1> for Thane\n press <2> for Panvel\n press <3> for Chembur\n press <4> for Goregaon\n");
             int locationOption = int.Parse(Console.ReadLine());
 
-            switch(locationOption)
+            switch (locationOption)
             {
 
                 case 0:
@@ -59,6 +41,20 @@ namespace NatureFresh
                     customer.Location = Convert.ToString(Location.Dadar);
                     break;
             }
+                    Validation val = new Validation();
+                    Console.Write("Please enter your name:");
+                    val.name = Console.ReadLine();
+                    Console.Write("Please enter item weight with quantity: ");
+                    val.quantity = Console.ReadLine();
+                    val.weightOf = Console.ReadLine();
+                    Console.Write("\nPlease select store Location: \n1.Panvel\n2.Chembur\n3.Thane\n4.Goregaon\n5.Dadar\n");
+                    val.loc = Console.ReadLine();
+                    Console.Write("\nPlease enter your 10 digit mobile number:");
+                    val.phoneNumber = Console.ReadLine();
+                    Console.Write("\nPlease enter your pincode:");
+                    val.pinCode = Console.ReadLine();
+                    Console.Write(val.GetDetails());
+            
 
             Console.WriteLine($"{customer.Id} {customer.Name} {customer.Address} {customer.Pincode} {customer.MobNum} {customer.Location}");
         }
