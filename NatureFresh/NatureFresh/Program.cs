@@ -7,60 +7,78 @@ namespace NatureFresh
     {
         static void Main(string[] args)
         {
+            int Id,PinCode,LocationNum,itemWeight,Unit, locationOption;
+            string Name, Address, PhoneNum,Olocation; //Olocation=Outlet Location
 
-
-            Validation val = new Validation();
-            Console.Write("Please enter your name:");
-            val.name = Console.ReadLine();
-            Console.Write("Please enter item weight with quantity: ");
-            val.quantity = Console.ReadLine();
-            val.weightOf = Console.ReadLine();
-            Console.Write("\nPlease select store Location: \n1.Panvel\n2.Chembur\n3.Thane\n4.Goregaon\n5.Dadar\n");
-            val.loc = Console.ReadLine();
-            Console.Write("\nPlease enter your 10 digit mobile number:");
-            val.phoneNumber = Console.ReadLine();
-            Console.Write("\nPlease enter your pincode:");
-            val.pinCode = Console.ReadLine();
-
-            Console.Write(val.GetDetails());
+            //Validation val = new Validation();
+            //Console.Write(val.GetDetails());
             Customer customer = new Customer();
-            Console.WriteLine("Enter ID");
-            customer.Id = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Your name");
-            customer.Name=Console.ReadLine();
-            Console.WriteLine("Enter Your address");
-            customer.Address = Console.ReadLine();
-            Console.WriteLine("Enter Your pincode");
-            customer.Pincode = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter Your Mobile Number");
-            customer.MobNum = Console.ReadLine();
-            Console.Write("\nPlease choose a Location to order -\cn press <0> for Dadar\n press <1> for Thane\n press <2> for Panvel\n press <3> for Chembur\n press <4> for Goregaon\n");
-            int locationOption = int.Parse(Console.ReadLine());
 
-            switch(locationOption)
+            Console.WriteLine("Enter ID");
+            Id=int.Parse(Console.ReadLine());
+            customer.Id = Id;
+
+            Console.WriteLine("Enter Your name");
+            Name = Console.ReadLine();
+            customer.Name=Name;
+
+            Console.WriteLine("Enter Your address");
+            Address = Console.ReadLine();
+            customer.Address = Address;
+
+            Console.WriteLine("Enter Your pincode");
+            PinCode = int.Parse(Console.ReadLine());
+            customer.Pincode = PinCode;
+
+            Console.WriteLine("Enter Your Mobile Number");
+            PhoneNum = Console.ReadLine();
+            customer.phoneNum = PhoneNum;
+
+            Console.Write("\nPlease choose a Location to order -\n press <0> for Dadar\n press <1> for Thane\n press <2> for Panvel\n press <3> for Chembur\n press <4> for Goregaon\n");
+            LocationNum= int.Parse(Console.ReadLine());
+            locationOption = LocationNum;
+
+            Console.WriteLine("Please choose in grams");
+            itemWeight=int.Parse(Console.ReadLine());
+            customer.ItemWeight = itemWeight;
+
+            Console.WriteLine("Please choose in units in range of (1-10)");
+            Unit = int.Parse(Console.ReadLine());
+            customer.Unit = Unit;
+
+            
+            switch (locationOption)
             {
 
                 case 0:
-                    customer.Location = Convert.ToString(Location.Dadar);
+                    Olocation = Convert.ToString(Location.Dadar);
+                    customer.Location = Olocation;
                     break;
                 case 1:
-                    customer.Location = Convert.ToString(Location.Thane);
+                    Olocation = Convert.ToString(Location.Thane);
+                    customer.Location = Olocation;
                     break;
                 case 2:
-                    customer.Location = Convert.ToString(Location.Panvel);
+                    Olocation = Convert.ToString(Location.Panvel);
+                    customer.Location = Olocation;
                     break;
                 case 3:
-                    customer.Location = Convert.ToString(Location.Chembur);
+                    Olocation = Convert.ToString(Location.Chembur);
+                    customer.Location = Olocation;
                     break;
                 case 4:
-                    customer.Location = Convert.ToString(Location.Goregaon);
+                    Olocation = Convert.ToString(Location.Goregaon);
+                    customer.Location = Olocation;
                     break;
                 default:
-                    customer.Location = Convert.ToString(Location.Dadar);
+                    Olocation = Convert.ToString(Location.Dadar);
+                    customer.Location = Olocation;
                     break;
             }
+              
+            Console.WriteLine($"{customer.Id} {customer.Name} {customer.Address} {customer.Pincode} {customer.phoneNum} {customer.Location} {customer.ItemWeight} {customer.Unit}");
+            //Console.WriteLine($"{Id} {Name} {Address} {PinCode} {PhoneNum} {Olocation} {Wei}");
 
-            Console.WriteLine($"{customer.Id} {customer.Name} {customer.Address} {customer.Pincode} {customer.MobNum} {customer.Location}");
         }
     }
 }
