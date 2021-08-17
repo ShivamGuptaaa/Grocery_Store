@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7E3A9twy2otzf+k1+utIJ14n3+RDFK+FFrPNRDNmxBOehJornNWcq0LuAv3JKoPyt9YRwd5n4yT9jgoHhv/zgg==",
+  "dgSpecHash": "v90mUtGpbNXnuUyEx9Atd3x0svoA/ZI9TVh4EUYSUDQ0gOVQ/0f6L9PQqxzPHDwEgm9sEa+imF6kwqe08YcKrQ==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {}
+    "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {
+    "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
+        "projectUniqueName": "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
         "projectName": "NatureFresh",
-        "projectPath": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
+        "projectPath": "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\obj\\",
+        "outputPath": "C:\\.netProject\\Grocery_Store\\NatureFresh\\NatureFresh\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

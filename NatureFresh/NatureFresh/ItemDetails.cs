@@ -9,7 +9,8 @@ namespace ConsoleApp1
     class ItemDetails
     {
         //File path for ItemDetails.json. Modify the path according to the placement of json file.
-        private string jsonFile = @"..//..//..//Json//ItemDetails.json";
+        //private string jsonFile = @"..//..//..//Json//ItemDetails.json";
+        private string jsonFile = @"..//Grocery_Store//ItemDetails.json";
 
         //Get a Specific item(To be upgraded to constructore)
         private void GetItem()
