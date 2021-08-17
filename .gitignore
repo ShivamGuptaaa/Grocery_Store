@@ -22,6 +22,7 @@ obj/
 *.user
 *.userosscache
 *.sln.docstates
+.suo
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -385,6 +386,7 @@ FodyWeavers.xsd
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+.vs
 
 # Local History for Visual Studio Code
 .history/
