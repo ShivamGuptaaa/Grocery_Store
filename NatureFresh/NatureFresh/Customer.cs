@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿
 namespace NatureFresh
 {
     class Customer
@@ -69,23 +67,6 @@ namespace NatureFresh
                 mobNum = value;
             }
         }
-
-        //public List<string> chooseLocation()
-        //{
-
-
-        //    return loc;
-        //}
-
-
-        //loc.Add(Convert.ToString(Location.Dadar));
-        //loc.Add(Convert.ToString(Location.Thane));
-        //loc.Add(Convert.ToString(Location.Panvel));
-        //loc.Add(Convert.ToString(Location.chembur));
-
-        /*List<string> location = new List<string>();
-        location.Add*/
-
 
         
     }
