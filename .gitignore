@@ -5,7 +5,8 @@
 # .NET Core build folders
 bin/
 obj/
-
+obj
+bin
 # Common node modules locations
 /node_modules
 /wwwroot/node_modules
@@ -22,6 +23,7 @@ obj/
 *.user
 *.userosscache
 *.sln.docstates
+.suo
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -385,6 +387,7 @@ FodyWeavers.xsd
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+.vs
 
 # Local History for Visual Studio Code
 .history/
