@@ -18,7 +18,7 @@ namespace NatureFresh
             customer.Pincode = int.Parse(Console.ReadLine());
             Console.WriteLine("Enter Your Mobile Number");
             customer.MobNum = Console.ReadLine();
-            Console.Write("\nPlease choose a Location to order -\n press <0> for Dadar\n press <1> for Thane\n press <2> for Panvel\n press <3> for Chembur\n press <4> for Goregaon\n");
+            Console.Write("\nPlease choose a Location to order -\cn press <0> for Dadar\n press <1> for Thane\n press <2> for Panvel\n press <3> for Chembur\n press <4> for Goregaon\n");
             int locationOption = int.Parse(Console.ReadLine());
 
             switch(locationOption)
