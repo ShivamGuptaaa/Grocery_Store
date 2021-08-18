@@ -3,69 +3,100 @@ using System.Text.RegularExpressions;
 namespace NatureFresh
 
 {
-    class Validation
+    class validation
     {
-        internal string name;
-        internal string quantity;
-        internal int quantValue;
-        internal string weightOf;
-        internal string loc;
-        internal string phoneNumber;
-        internal string pinCode;
-        internal string[] location = { "Panvel", "Thane", "Chembur", "Goregaon", "Dadar" };
-        internal string GetDetails()
+        
+        internal string[] storeLocation = { "Panvel", "Thane", "Chembur", "Goregaon", "Dadar" };
+        internal string[] weightList = { "1000", "500" ,"250","1"};
+        
+            
+        internal string checkName(string name)   // to check name (if name is empty it will return null value,otherwise it will return name)
         {
-            bool success = int.TryParse(quantity, out quantValue);
-            bool valid = success && 0 < quantValue && quantValue <= 10;
-            while (!valid)
+            if (string.IsNullOrEmpty(name))
             {
-                Console.WriteLine("\nInvalid quantity. Try again...");
-                Console.WriteLine("\nPlease enter quantity in range(1-10): ");
-                quantity = Console.ReadLine();
-                success = int.TryParse(quantity, out quantValue);
-                valid = 0 < quantValue && quantValue <= 10;
+                return ("null");
             }
-
-
-
-            bool check = Array.Exists(location, x => x == loc);
-            while (!check)
+            else
             {
-                Console.WriteLine("\nLocation not found! Try again...");
-                Console.WriteLine("\nPlease enter valid location ");
-                quantity = Console.ReadLine();
-                check = Array.Exists(location, x => x == loc);
+                return name;
             }
+        } 
 
-
-            Regex mobilePattern = new Regex(@"^[1-9]\d{10}$");
-
+        internal string checkPhonenumber(string phoneNumber)  // to check valid mobile number
+        {
+            Regex mobilePattern = new Regex("(?:(?:\\+|0{0,2})91(\\s*[\\- ]\\s*)?|[0 ]?)?[789]\\d{9}|(\\d[ -]?){10}\\d"); //mobile number should match this pattern(eg.9436728123)
 
             if (mobilePattern.IsMatch(phoneNumber))
             {
-                Console.WriteLine("\nSuccessfully entered mobile number!");
+                return phoneNumber;
             }
             else
             {
-                Console.WriteLine("\nInvalid mobile number! Try agian...");
+                return null;
             }
+        }
 
 
+        internal string checkPincode(string pinCode) //to check valid pincode
+        {
+            Regex pinPattern = new Regex("^[1-9]{1}[0-9]{2}\\s{0, 1}[0-9]{3}$"); //pincode should match this pattern
 
-            Regex pinPattern = new Regex("^[1-9]{1}[0-9]{2}\\s{0, 1}[0-9]{3}$");
             if (pinPattern.IsMatch(pinCode))
             {
-                Console.WriteLine("\nSuccessfully entered pincode!");
+                return pinCode;
             }
             else
             {
-                Console.WriteLine("\nInvalid pincode! Try again...");
-
+                return null;
             }
-
-
-            return $"\n Your order Details : \n Weight(Quantity): {weightOf} kg ({quantity} Units)\n Location: {loc}\n Phone: {phoneNumber}\n Pincode: {pinCode}\n \n********THANKS FOR YOUR OREDR*********\n\n";
         }
+
+
+
+        internal string checkWeight(string itemWeight) //to check valid item weight
+        {
+            bool check = Array.Exists(weightList, x => x == itemWeight); // it should be 1000gm or 500gm or 250gm or 1 bundle
+            if (!check)
+            {
+                return null;
+            }
+            else
+            {
+                return itemWeight;
+            }
+        }
+
+
+        internal int checkQuantity(int itemQuantity) //to check item quantity
+        {
+           
+            if (itemQuantity > 0 && itemQuantity<=10) //range of item quantity should be between 1 to 10
+            {
+                return itemQuantity;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+
+        internal string checkLocation(string location) // to check store location is valid or not
+        {
+            bool check = Array.Exists(storeLocation, x => x == location);  // check input location is exists in store location or not
+            if (!check)
+            {
+                return null;               
+            }
+            else
+            {
+                return location;
+            }
+                
+        }
+        
+        
+        
     }
 
 }
