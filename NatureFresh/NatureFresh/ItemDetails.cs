@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
@@ -95,9 +95,6 @@ namespace NatureFresh
             _UpdateItemStock(InputValue, newValue);
         }
 
-        public int id { get; set; }
-        public int price { get; set; }
-        public int stock { get; set; }
 
 
     }
