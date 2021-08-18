@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-namespace NatureFresh
 
+namespace NatureFresh
 {
     class validation
     {

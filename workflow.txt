@@ -1,0 +1,42 @@
+List of items in json{
+keys= id, name, qauntity(default=1kg) in grams,bundle,pieces, price.
+}
+
+Types of user{
+customer=>Can place order,check history
+shopkeeper=> Change stock qauntity, change price, change name, add item ,delete item ,basically all CRUD, accept order;
+admin=>
+}
+
+1.Accepting the orders{
+Id
+User's Name
+User's address
+User's pincode
+list of items ordered including qauntity
+User's phone no.
+outlet's location
+
+Validation while accepting orders:
+Limited order item qauntity(max qauntity(weight)=1kg, max qauntity(qauntity)=10)
+valid 10 digits (to ne implemented later)
+valid outlet location
+valid 6 digits pincode
+
+If validation fails then at that point cw.
+}
+
+2. Stock model{
+item id
+item name
+item qauntity(existing quantity)
+}
+
+2.Implement Business logic{
+Check order qauntity
+Check current stocks
+Calculate price for each item
+Calculate total price
+Feature for discounts
+Update stocks
+}
