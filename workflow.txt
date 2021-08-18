@@ -39,4 +39,5 @@ Calculate price for each item
 Calculate total price
 Feature for discounts
 Update stocks
+update json file for order history(id,name,item,qauntity,weight,total price of each item[price/item],total price[price/order]).
 }
