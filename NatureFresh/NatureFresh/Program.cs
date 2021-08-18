@@ -5,74 +5,59 @@ namespace NatureFresh
     {
         static void Main(string[] args)
         {
-            int Id,PinCode,LocationNum,itemWeight,Unit, locationOption;
-            string Name, Address, PhoneNum,Olocation; //Olocation=Outlet Location
+            int Id,Unit;
+            string itemWeight, Name, Address, PhoneNum, PinCode, locationOption; //Olocation=Outlet Location
+
+
+
+
+            ItemDetails detail = new ItemDetails();
+            detail.GetAllItems();
+            detail.UpdateItemStock("potato", "20000");
+            detail.GetItem();
+
+
 
             Customer customer = new Customer();
+            validation validate = new validation();
 
             Console.WriteLine("Enter ID");
             Id=int.Parse(Console.ReadLine());
+            //validate.check
             customer.Id = Id;
 
             Console.WriteLine("Enter Your name");
             Name = Console.ReadLine();
-            customer.Name=Name;
+            customer.Name = validate.checkName(Name);
 
             Console.WriteLine("Enter Your address");
             Address = Console.ReadLine();
             customer.Address = Address;
 
             Console.WriteLine("Enter Your pincode");
-            PinCode = int.Parse(Console.ReadLine());
-            customer.Pincode = PinCode;
+            PinCode = Console.ReadLine();
+            customer.Pincode = int.Parse(validate.checkPincode(PinCode));
 
             Console.WriteLine("Enter Your Mobile Number");
             PhoneNum = Console.ReadLine();
-            customer.phoneNum = PhoneNum;
+            customer.phoneNum = validate.checkPhonenumber(PhoneNum);
 
-            Console.Write("\nPlease choose a Location to order -\n press <0> for Dadar\n press <1> for Thane\n press <2> for Panvel\n press <3> for Chembur\n press <4> for Goregaon\n");
-            LocationNum= int.Parse(Console.ReadLine());
-            locationOption = LocationNum;
+
+            Console.Write("\nPlease choose a Location to order from these locations only -\nDadar\nThane\nPanvel\nChembur\nGoregaon: ");
+            locationOption= Console.ReadLine();
+            customer.Location = validate.checkLocation(locationOption);
 
             Console.WriteLine("Please choose in grams");
-            itemWeight=int.Parse(Console.ReadLine());
-            customer.ItemWeight = itemWeight;
+            itemWeight=Console.ReadLine();
+            customer.ItemWeight = int.Parse(validate.checkWeight(itemWeight));
 
             Console.WriteLine("Please choose in units in range of (1-10)");
             Unit = int.Parse(Console.ReadLine());
-            customer.Unit = Unit;
+            customer.Unit = validate.checkQuantity(Unit);
 
-            switch (locationOption)
-            {
-
-                case 0:
-                    Olocation = Convert.ToString(Location.Dadar);
-                    customer.Location = Olocation;
-                    break;
-                case 1:
-                    Olocation = Convert.ToString(Location.Thane);
-                    customer.Location = Olocation;
-                    break;
-                case 2:
-                    Olocation = Convert.ToString(Location.Panvel);
-                    customer.Location = Olocation;
-                    break;
-                case 3:
-                    Olocation = Convert.ToString(Location.Chembur);
-                    customer.Location = Olocation;
-                    break;
-                case 4:
-                    Olocation = Convert.ToString(Location.Goregaon);
-                    customer.Location = Olocation;
-                    break;
-                default:
-                    Olocation = Convert.ToString(Location.Dadar);
-                    customer.Location = Olocation;
-                    break;
-            }
+            
               
             Console.WriteLine($"{customer.Id} {customer.Name} {customer.Address} {customer.Pincode} {customer.phoneNum} {customer.Location} {customer.ItemWeight} {customer.Unit}");
-            //Console.WriteLine($"{Id} {Name} {Address} {PinCode} {PhoneNum} {Olocation} {Wei}");
 
         }
     }

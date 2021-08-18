@@ -1,0 +1,549 @@
+{
+  "potato": {
+    "id": "101",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "10000",
+    "quantity": "20000"
+  },
+  "onion": {
+    "id": "102",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "35",
+    "quantity": "50000"
+  },
+  "tomato": {
+    "id": "103",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "40",
+    "quantity": "50000"
+  },
+  "green peas": {
+    "id": "104",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "100",
+    "quantity": "10000"
+  },
+  "bharta brinjal": {
+    "id": "105",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "5000"
+  },
+  "cabbage": {
+    "id": "106",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "7000"
+  },
+  "long brinjal": {
+    "id": "107",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "3000"
+  },
+  "small brinjal": {
+    "id": "108",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "4500"
+  },
+  "cauliflower": {
+    "id": "109",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "6500"
+  },
+  "okra": {
+    "id": "110",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "70",
+    "quantity": "6000"
+  },
+  "bottlegourd": {
+    "id": "111",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "5500"
+  },
+  "ridge gourd": {
+    "id": "112",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "6000"
+  },
+  "capsicum": {
+    "id": "113",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "5000"
+  },
+  "orange carrot": {
+    "id": "114",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "5500"
+  },
+  "cucumber": {
+    "id": "115",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "6000"
+  },
+  "ivy gourd": {
+    "id": "116",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "4000"
+  },
+  "elephant foot": {
+    "id": "117",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "10000"
+  },
+  "arvi": {
+    "id": "118",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "3500"
+  },
+  "pointed gourd": {
+    "id": "119",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "4000"
+  },
+  "sweet potato": {
+    "id": "120",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "10000"
+  },
+  "beetroot": {
+    "id": "121",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "4000"
+  },
+  "raw papaya": {
+    "id": "122",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "50",
+    "quantity": "3500"
+  },
+  "french beans": {
+    "id": "123",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "100",
+    "quantity": "5000"
+  },
+  "drumstick": {
+    "id": "124",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "8",
+    "quantity": "50"
+  },
+  "sponge gourd": {
+    "id": "125",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "4500"
+  },
+  "coconut": {
+    "id": "126",
+    "weight": "1",
+    "unit": "pc",
+    "price": "35",
+    "quantity": "35"
+  },
+  "raw banana": {
+    "id": "127",
+    "weight": "1",
+    "unit": "pc",
+    "price": "7",
+    "quantity": "150"
+  },
+  "bitter gourd": {
+    "id": "128",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "4500"
+  },
+  "chawli": {
+    "id": "129",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "5000"
+  },
+  "papdi": {
+    "id": "130",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "4500"
+  },
+  "green cucumber": {
+    "id": "131",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "70",
+    "quantity": "4000"
+  },
+  "awla": {
+    "id": "132",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "140",
+    "quantity": "4000"
+  },
+  "purple Yam": {
+    "id": "133",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "140",
+    "quantity": "2000"
+  },
+  "baby potato": {
+    "id": "134",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "7500"
+  },
+  "orange pumpkin": {
+    "id": "135",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "48",
+    "quantity": "12000"
+  },
+  "white pumpkin": {
+    "id": "136",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "5000"
+  },
+  "snake gourd": {
+    "id": "137",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "3500"
+  },
+  "yellow cucumber": {
+    "id": "138",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "70",
+    "quantity": "2500"
+  },
+  "raw tomato": {
+    "id": "139",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "60",
+    "quantity": "5000"
+  },
+  "ghevda": {
+    "id": "140",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "3000"
+  },
+  "green pumpkin": {
+    "id": "141",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "48",
+    "quantity": "6000"
+  },
+  "peeled garlic": {
+    "id": "142",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "50",
+    "quantity": "20"
+  },
+  "ginger": {
+    "id": "143",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "100",
+    "quantity": "5000"
+  },
+  "methi": {
+    "id": "144",
+    "weight": "1",
+    "unit": "bundle",
+    "price": "30",
+    "quantity": "60"
+  },
+  "pudina": {
+    "id": "145",
+    "weight": "1",
+    "unit": "bundle",
+    "price": "20",
+    "quantity": "40"
+  },
+  "coriander": {
+    "id": "146",
+    "weight": "1",
+    "unit": "bundle",
+    "price": "30",
+    "quantity": "50"
+  },
+  "curry leaves": {
+    "id": "147",
+    "weight": "1",
+    "unit": "bundle",
+    "price": "10",
+    "quantity": "1000"
+  },
+  "lemon": {
+    "id": "148",
+    "weight": "1",
+    "unit": "pc",
+    "price": "3",
+    "quantity": "250"
+  },
+  "spring onion": {
+    "id": "149",
+    "weight": "1",
+    "unit": "bundle",
+    "price": "20",
+    "quantity": "25"
+  },
+  "less spicy chilli": {
+    "id": "150",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "5000"
+  },
+  "spicy chilli": {
+    "id": "151",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "80",
+    "quantity": "6000"
+  },
+  "spinach": {
+    "id": "152",
+    "weight": "1",
+    "unit": "bundle",
+    "price": "20",
+    "quantity": "45"
+  },
+  "bhavnagri chilli": {
+    "id": "153",
+    "weight": "100",
+    "unit": "gram",
+    "price": "20",
+    "quantity": "3000"
+  },
+  "redish": {
+    "id": "154",
+    "weight": "1",
+    "unit": "pc",
+    "price": "10",
+    "quantity": "50"
+  },
+  "corn": {
+    "id": "155",
+    "weight": "1",
+    "unit": "pc",
+    "price": "20",
+    "quantity": "60"
+  },
+  "iceburg lettuce": {
+    "id": "156",
+    "name": "Iceburg lettuce",
+    "weight": "250",
+    "unit": "gram",
+    "price": "50",
+    "quantity": "2500"
+  },
+  "parsley": {
+    "id": "157",
+    "weight": "100",
+    "unit": "gram",
+    "price": "30",
+    "quantity": "500"
+  },
+  "baby corn": {
+    "id": "158",
+    "weight": "100",
+    "unit": "pack",
+    "price": "25",
+    "quantity": "15"
+  },
+  "celery": {
+    "id": "159",
+    "weight": "100",
+    "unit": "gram",
+    "price": "25",
+    "quantity": "35"
+  },
+  "basil": {
+    "id": "160",
+    "weight": "100",
+    "unit": "gram",
+    "price": "25",
+    "quantity": "500"
+  },
+  "broccoli": {
+    "id": "161",
+    "weight": "1",
+    "unit": "gram",
+    "price": "140",
+    "quantity": "3000"
+  },
+  "salad leaves": {
+    "id": "162",
+    "weight": "1",
+    "unit": "pc",
+    "price": "20",
+    "quantity": "25"
+  },
+  "red capsicum": {
+    "id": "163",
+    "weight": "500",
+    "unit": "gram",
+    "price": "120",
+    "quantity": "3500"
+  },
+  "yellow capsicum": {
+    "id": "164",
+    "weight": "500",
+    "unit": "gram",
+    "price": "120",
+    "quantity": "3500"
+  },
+  "green zuchhini": {
+    "id": "165",
+    "weight": "250",
+    "unit": "gram",
+    "price": "50",
+    "quantity": "3000"
+  },
+  "yellow zuchhini": {
+    "id": "166",
+    "weight": "250",
+    "unit": "gram",
+    "price": "50",
+    "quantity": "1000"
+  },
+  "peanut": {
+    "id": "167",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "100",
+    "quantity": "10000"
+  },
+  "mushroom": {
+    "id": "168",
+    "weight": "200",
+    "unit": "pack",
+    "price": "40",
+    "quantity": "40"
+  },
+  "cherry tomato": {
+    "id": "169",
+    "weight": "100",
+    "unit": "pack",
+    "price": "25",
+    "quantity": "35"
+  },
+  "thai mix": {
+    "id": "170",
+    "weight": "100",
+    "unit": "pack",
+    "price": "80",
+    "quantity": "10"
+  },
+  "purple cabbage": {
+    "id": "171",
+    "weight": "250",
+    "unit": "gram",
+    "price": "30",
+    "quantity": "2500"
+  },
+  "raw mango": {
+    "id": "172",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "100",
+    "quantity": "3500"
+  },
+  "tinda": {
+    "id": "173",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "200",
+    "quantity": "2500"
+  },
+  "dill (soa)": {
+    "id": "174",
+    "weight": "1",
+    "unit": "bundle",
+    "price": "20",
+    "quantity": "12"
+  },
+  "avacado": {
+    "id": "175",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "400",
+    "quantity": "2500"
+  },
+  "lemon grass": {
+    "id": "176",
+    "weight": "1",
+    "unit": "bundle",
+    "price": "20",
+    "quantity": "2000"
+  },
+  "lotus stem": {
+    "id": "177",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "200",
+    "quantity": "2000"
+  },
+  "spiny gourd": {
+    "id": "178",
+    "weight": "1000",
+    "unit": "gram",
+    "price": "200",
+    "quantity": "4000"
+  }
+}

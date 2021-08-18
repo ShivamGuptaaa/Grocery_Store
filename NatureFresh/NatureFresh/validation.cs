@@ -10,11 +10,11 @@ namespace NatureFresh
         internal string[] weightList = { "1000", "500" ,"250","1"};
         
             
-        internal string checkName(string name)   // to check name (if name is empty it will return null value,otherwise it will return name)
+        internal string checkName(string name)   // to check name (if name is empty it will return 0 value,otherwise it will return name)
         {
             if (string.IsNullOrEmpty(name))
             {
-                return ("null");
+                return ("");
             }
             else
             {
@@ -32,7 +32,8 @@ namespace NatureFresh
             }
             else
             {
-                return null;
+                return "";
+
             }
         }
 
@@ -41,13 +42,13 @@ namespace NatureFresh
         {
             Regex pinPattern = new Regex("^[1-9]{1}[0-9]{2}\\s{0, 1}[0-9]{3}$"); //pincode should match this pattern
 
-            if (pinPattern.IsMatch(pinCode))
+            if (pinCode.Length == 6)
             {
                 return pinCode;
             }
             else
             {
-                return null;
+                return "0";
             }
         }
 
@@ -58,7 +59,7 @@ namespace NatureFresh
             bool check = Array.Exists(weightList, x => x == itemWeight); // it should be 1000gm or 500gm or 250gm or 1 bundle
             if (!check)
             {
-                return null;
+                return "0";
             }
             else
             {
@@ -86,7 +87,7 @@ namespace NatureFresh
             bool check = Array.Exists(storeLocation, x => x == location);  // check input location is exists in store location or not
             if (!check)
             {
-                return null;               
+                return "";               
             }
             else
             {
