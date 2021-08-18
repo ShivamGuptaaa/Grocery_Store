@@ -4,18 +4,18 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace ConsoleApp1
+namespace NatureFresh
 {
     class ItemDetails
     {
         //File path for ItemDetails.json. Modify the path according to the placement of json file.
-        private string jsonFile = @"..//..//..//Json//ItemDetails.json";
+        private string detailsJson = @"..//..//ItemDetails.json";
 
         //Get a Specific item(To be upgraded to constructore)
-        private void GetItem()
+        private void _GetItem()
         {
-            var json = File.ReadAllText(jsonFile);
-            Console.WriteLine("Enter the item you want to find");
+            var json = File.ReadAllText(detailsJson);
+            Console.WriteLine("\nEnter the item you want to find");
             var itemInput = Console.ReadLine().ToLower();
             var JsonObject = JObject.Parse(json);
 
@@ -25,37 +25,74 @@ namespace ConsoleApp1
                 Console.WriteLine("\nID: " + item["id"]);
                 Console.WriteLine("Name: " + itemInput.ToUpper());
                 Console.WriteLine("Price: " + item["price"]);
+                Console.WriteLine("Quantity: " + item["quantity"]);
                 Console.WriteLine("Weight: " + item["weight"]);
                 Console.WriteLine("Unit: " + item["unit"]);
             }
             else
             {
-                Console.WriteLine("The item does not exist in the menu yet!");
+                Console.WriteLine("\nThe item does not exist in the menu yet!");
             }
         }
 
-        private void GetAllItems()
+        //Get All the items available in the Json/Database
+        private void _GetAllItems()
         {
-            var json = File.ReadAllText(jsonFile);
+            var json = File.ReadAllText(detailsJson);
             var JsonObject = JObject.Parse(json);
             
             foreach (var item in JsonObject)
             {
                 Console.WriteLine("\n" + item.Key.ToUpper());
                 Console.WriteLine("-Price: " + item.Value["price"]);
+                Console.WriteLine("-Quantity: " + item.Value["quantity"]);
                 Console.WriteLine("-Weight: " + item.Value["weight"]);
                 Console.WriteLine("-Unit: " + item.Value["unit"]);
             }
         }
 
-        public void GetItemDetails()
+        private void _UpdateItemStock(string InputValue, string newValue)
         {
-            GetItem();
+            InputValue = InputValue.ToLower();
+            var json = File.ReadAllText(detailsJson);
+            var JsonObject = JObject.Parse(json);
+
+            foreach (var item in JsonObject)
+            {
+                if(item.Key == InputValue)
+                {
+                    try
+                    {
+                        item.Value["quantity"] = newValue;
+                        string output = JsonConvert.SerializeObject(JsonObject, Formatting.Indented);
+                        File.WriteAllText(detailsJson, output);
+                        return; // Stop the function
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine("\nError: " + e);
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine("\nItem not in inventory!");
+            
         }
 
-        public void GetAllItemDetails()
+        //public methods calling the private ones
+        public void GetItem()
         {
-            GetAllItems();
+            _GetItem();
+        }
+
+        public void GetAllItems()
+        {
+            _GetAllItems();
+        }
+
+        public void UpdateItemStock(string InputValue, string newValue)
+        {
+            _UpdateItemStock(InputValue, newValue);
         }
 
         public int id { get; set; }
