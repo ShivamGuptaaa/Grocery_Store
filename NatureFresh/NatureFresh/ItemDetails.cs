@@ -9,7 +9,7 @@ namespace NatureFresh
     class ItemDetails
     {
         //File path for ItemDetails.json. Modify the path according to the placement of json file.
-        private string detailsJson = @"..//..//ItemDetails.json";
+        private string detailsJson = @"..//..//..//json/ItemDetails.json";
 
         //Get a Specific item(To be upgraded to constructore)
         private void _GetItem()
@@ -40,7 +40,7 @@ namespace NatureFresh
         {
             var json = File.ReadAllText(detailsJson);
             var JsonObject = JObject.Parse(json);
-            
+
             foreach (var item in JsonObject)
             {
                 Console.WriteLine("\n" + item.Key.ToUpper());
@@ -59,7 +59,7 @@ namespace NatureFresh
 
             foreach (var item in JsonObject)
             {
-                if(item.Key == InputValue)
+                if (item.Key == InputValue)
                 {
                     try
                     {
@@ -68,7 +68,7 @@ namespace NatureFresh
                         File.WriteAllText(detailsJson, output);
                         return; // Stop the function
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         Console.WriteLine("\nError: " + e);
                         break;
@@ -76,7 +76,7 @@ namespace NatureFresh
                 }
             }
             Console.WriteLine("\nItem not in inventory!");
-            
+
         }
 
         //public methods calling the private ones
