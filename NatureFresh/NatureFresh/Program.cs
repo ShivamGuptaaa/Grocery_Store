@@ -1,62 +1,72 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 namespace NatureFresh
 {
     class Program
     {
+
         static void Main(string[] args)
         {
+            processOrder p = new processOrder();
+            int Id,Unit;
+            string itemWeight, Name, Address, PhoneNum, PinCode, locationOption; //Olocation=Outlet Location
+
+            //ItemDetails detail = new ItemDetails();
+            ////detail.GetAllItems();
+            //detail.UpdateItemStock("potato", "20000");
+            //detail.GetItem();
+
+            Dictionary<string,string> num = new Dictionary<string,string>();
+            num.Add("", "");
+
             Customer customer = new Customer();
+            validation validate = new validation();
+
             Console.WriteLine("Enter ID");
-            customer.Id = int.Parse(Console.ReadLine());
+            Id=int.Parse(Console.ReadLine());
+            customer.Id = Id;
+
             Console.WriteLine("Enter Your name");
-            customer.Name=Console.ReadLine();
+            Name = Console.ReadLine();
+            customer.Name = validate.checkName(Name);
+
             Console.WriteLine("Enter Your address");
-            customer.Address = Console.ReadLine();
+            Address = Console.ReadLine();
+            customer.Address = Address;
+
             Console.WriteLine("Enter Your pincode");
-            customer.Pincode = int.Parse(Console.ReadLine());
+            PinCode = Console.ReadLine();
+            customer.Pincode = int.Parse(validate.checkPincode(PinCode));
+
             Console.WriteLine("Enter Your Mobile Number");
-            customer.MobNum = Console.ReadLine();
-            Console.Write("\nPlease choose a Location to order -\n press <0> for Dadar\n press <1> for Thane\n press <2> for Panvel\n press <3> for Chembur\n press <4> for Goregaon\n");
-            int locationOption = int.Parse(Console.ReadLine());
+            PhoneNum = Console.ReadLine();
+            customer.phoneNum = validate.checkPhonenumber(PhoneNum);
 
-            switch (locationOption)
-            {
 
-                case 0:
-                    customer.Location = Convert.ToString(Location.Dadar);
-                    break;
-                case 1:
-                    customer.Location = Convert.ToString(Location.Thane);
-                    break;
-                case 2:
-                    customer.Location = Convert.ToString(Location.Panvel);
-                    break;
-                case 3:
-                    customer.Location = Convert.ToString(Location.Chembur);
-                    break;
-                case 4:
-                    customer.Location = Convert.ToString(Location.Goregaon);
-                    break;
-                default:
-                    customer.Location = Convert.ToString(Location.Dadar);
-                    break;
-            }
-                    Validation val = new Validation();
-                    Console.Write("Please enter your name:");
-                    val.name = Console.ReadLine();
-                    Console.Write("Please enter item weight with quantity: ");
-                    val.quantity = Console.ReadLine();
-                    val.weightOf = Console.ReadLine();
-                    Console.Write("\nPlease select store Location: \n1.Panvel\n2.Chembur\n3.Thane\n4.Goregaon\n5.Dadar\n");
-                    val.loc = Console.ReadLine();
-                    Console.Write("\nPlease enter your 10 digit mobile number:");
-                    val.phoneNumber = Console.ReadLine();
-                    Console.Write("\nPlease enter your pincode:");
-                    val.pinCode = Console.ReadLine();
-                    Console.Write(val.GetDetails());
+            Console.Write("\nPlease choose a Location to order from these locations only -\nDadar\nThane\nPanvel\nChembur\nGoregaon: ");
+            locationOption= Console.ReadLine();
+            customer.Location = validate.checkLocation(locationOption);
+
+            ItemDetails.printItem("potato");
+            ItemDetails.printItem("orange carrot");
+            ItemDetails.printItem("green peas");
+            ItemDetails.printItem("onion");
+            ItemDetails.printItem("cucumber");
+            ItemDetails.printItem("lemon");
+
+
+            Console.WriteLine("\nPlease choose in grams(if applicable)");
+            itemWeight=Console.ReadLine();
+            customer.ItemWeight = int.Parse(validate.checkWeight(itemWeight));
+
+            Console.WriteLine("Please choose in units in range of (1-10)");
+            Unit = int.Parse(Console.ReadLine());
+            customer.Unit = validate.checkQuantity(Unit);
+
             
+              
+            Console.WriteLine($"{customer.Id} {customer.Name} {customer.Address} {customer.Pincode} {customer.phoneNum} {customer.Location} {customer.ItemWeight} {customer.Unit}");
 
-            Console.WriteLine($"{customer.Id} {customer.Name} {customer.Address} {customer.Pincode} {customer.MobNum} {customer.Location}");
         }
     }
 }

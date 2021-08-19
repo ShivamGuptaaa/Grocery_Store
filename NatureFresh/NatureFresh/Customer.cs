@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
 namespace NatureFresh
 {
     class Customer
@@ -7,13 +8,9 @@ namespace NatureFresh
         public int Id
         {
             get
-            {
-                return id;
-            }
+            { return id; }
             set
-            {
-                id = value;
-            }
+            { id = value; }
         }
         string location;
         public string Location { 
@@ -33,41 +30,52 @@ namespace NatureFresh
         public string Address
         {
             get
-            {
-                return address;
-            }
+            { return address; }
             set
-            {
-                address = value;
-            }
+            { address = value; }
         }
 
         int pincode;
         public int Pincode
         {
             get
-            {
-                return pincode;
-            }
+            { return pincode; }
             set
-            {
-                pincode = value;
-            }
+            {   pincode = value; }
         }
 
-        string mobNum;
-        public string MobNum
+        string phonenum;
+        public string phoneNum
+        {
+            get
+            { return phonenum;}
+            set
+            { phonenum = value; }
+        }
+        int itemWeight;
+        public int ItemWeight
         {
             get
             {
-                return mobNum;
+                return itemWeight;
             }
             set
             {
-                mobNum = value;
+                itemWeight = value;
             }
         }
-
+        int unit;
+        public int Unit
+        {
+            get
+            {
+                return unit;
+            }
+            set
+            {
+                unit = value;
+            }
+        }
         
     }
     public enum Location

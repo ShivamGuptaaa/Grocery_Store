@@ -1,11 +1,4 @@
-﻿using System;
-<<<<<<< HEAD
-
-
-=======
-using System.Text.RegularExpressions;
-
->>>>>>> 0c2939ebfc97b8b3a862700074813ddbba61aae5
+using System;
 namespace NatureFresh
 {
     class validation
@@ -43,7 +36,6 @@ namespace NatureFresh
         {
             if ((phoneNumber.Length != 10) || (phoneNumber == null))
             {
-
                 Console.WriteLine("Please enter your 10 digit mobile number!");
                 phoneNumber = Console.ReadLine();
                 checkPhonenumber(phoneNumber);
@@ -75,7 +67,6 @@ namespace NatureFresh
                 Console.WriteLine("Please enter valid item weight (1000gm,500gm,250gm or 1 bundle)!");
                 itemWeight = Console.ReadLine();
                 checkWeight(itemWeight);
-
             }
 
             return itemWeight;

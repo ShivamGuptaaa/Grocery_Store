@@ -3,9 +3,9 @@ keys= id, name, qauntity(default=1kg) in grams,bundle,pieces, price.
 }
 
 Types of user{
-customer=>Can place order,check history
-shopkeeper=> Change stock qauntity, change price, change name, add item ,delete item ,basically all CRUD, accept order;
-admin=>
+customer=>Can place order, check history, SignUp/SignIn, Modify customer details, Track Order(optional).  
+shopkeeper=> Change stock qauntity, change price, change name, add item ,delete item ,basically all CRUD, accept order, Show new orders; ---> outlet manager
+admin=> can register/approve shopkeeper/outlet manager, fetch customers, fetch outlet wise orders, fetch outlet's inventory, design discount model	---> Owner
 }
 
 1.Accepting the orders{
@@ -34,9 +34,13 @@ item qauntity(existing quantity)
 
 2.Implement Business logic{
 Check order qauntity
-Check current stocks
-Calculate price for each item
-Calculate total price
-Feature for discounts
-Update stocks
+Check current stocks (if stock<demand then display error and ask for new demand value recursivly)--
+Calculate price for each item( check unit[if "pc" OR "bundle" then qauntity*itemRate || "gram" (weight/1000)*itemRate )--
+Calculate total price--
+//Feature for discounts
+Update stocks--
+update json file for order history(customerId,customerName,Dictionary of items(includes itemName,unit,qauntity,total price of each item[price/item]),total price[price/order]).
 }
+
+
+
