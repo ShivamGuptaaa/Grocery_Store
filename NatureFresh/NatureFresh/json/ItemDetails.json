@@ -3,8 +3,8 @@
     "id": "101",
     "weight": "1000",
     "unit": "gram",
-    "price": "10000",
-    "quantity": "20000"
+    "price": "30",
+    "quantity": "4000"
   },
   "onion": {
     "id": "102",
@@ -102,7 +102,7 @@
     "weight": "1000",
     "unit": "gram",
     "price": "60",
-    "quantity": "6000"
+    "quantity": "0"
   },
   "ivy gourd": {
     "id": "116",
@@ -333,14 +333,14 @@
     "weight": "1",
     "unit": "pc",
     "price": "3",
-    "quantity": "250"
+    "quantity": "170"
   },
   "spring onion": {
     "id": "149",
     "weight": "1",
     "unit": "bundle",
     "price": "20",
-    "quantity": "25"
+    "quantity": "9"
   },
   "less spicy chilli": {
     "id": "150",

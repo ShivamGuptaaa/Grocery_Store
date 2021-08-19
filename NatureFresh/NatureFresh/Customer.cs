@@ -76,7 +76,7 @@ namespace NatureFresh
                 unit = value;
             }
         }
-
+        
     }
     public enum Location
     {

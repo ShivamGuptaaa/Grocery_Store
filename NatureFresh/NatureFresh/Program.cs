@@ -1,29 +1,29 @@
 using System;
+using System.Collections.Generic;
 namespace NatureFresh
 {
     class Program
     {
+
         static void Main(string[] args)
         {
+            processOrder p = new processOrder();
             int Id,Unit;
             string itemWeight, Name, Address, PhoneNum, PinCode, locationOption; //Olocation=Outlet Location
 
+            //ItemDetails detail = new ItemDetails();
+            ////detail.GetAllItems();
+            //detail.UpdateItemStock("potato", "20000");
+            //detail.GetItem();
 
-
-
-            ItemDetails detail = new ItemDetails();
-            detail.GetAllItems();
-            detail.UpdateItemStock("potato", "20000");
-            detail.GetItem();
-
-
+            Dictionary<string,string> num = new Dictionary<string,string>();
+            num.Add("", "");
 
             Customer customer = new Customer();
             validation validate = new validation();
 
             Console.WriteLine("Enter ID");
             Id=int.Parse(Console.ReadLine());
-            //validate.check
             customer.Id = Id;
 
             Console.WriteLine("Enter Your name");
@@ -47,7 +47,15 @@ namespace NatureFresh
             locationOption= Console.ReadLine();
             customer.Location = validate.checkLocation(locationOption);
 
-            Console.WriteLine("Please choose in grams");
+            ItemDetails.printItem("potato");
+            ItemDetails.printItem("orange carrot");
+            ItemDetails.printItem("green peas");
+            ItemDetails.printItem("onion");
+            ItemDetails.printItem("cucumber");
+            ItemDetails.printItem("lemon");
+
+
+            Console.WriteLine("\nPlease choose in grams(if applicable)");
             itemWeight=Console.ReadLine();
             customer.ItemWeight = int.Parse(validate.checkWeight(itemWeight));
 
