@@ -5,14 +5,14 @@ namespace NatureFresh
 {
     class processOrder
     {
-        Dictionary<string, string[]> orderLst = new Dictionary<string, string[]>();
+        //Dictionary<string, string[]> orderLst = new Dictionary<string, string[]>();
         
-        internal processOrder()
+        internal processOrder(Dictionary<string, string[]> orderLst)
         {
-            orderLst.Add("cucumber",new string[]{ "1000", "3" });
-            orderLst.Add("potato", new string[] { "1000", "2" });
-            orderLst.Add("lemon", new string[] { "1", "10" });
-            orderLst.Add("spring onion", new string[] { "1", "2" });
+            //orderLst.Add("cucumber",new string[]{ "1000", "3" });
+            //orderLst.Add("potato", new string[] { "1000", "2" });
+            //orderLst.Add("lemon", new string[] { "1", "10" });
+            //orderLst.Add("spring onion", new string[] { "1", "2" });
             Dictionary<string, string[]> newOrderList = new Dictionary<string, string[]>();     // structure (itemName,[unit,quantity,itemTotalPrice])
             int price=0;            //for individual item price
             int totPrice = 0;       //for total price of a order
@@ -43,10 +43,8 @@ namespace NatureFresh
             }
             Console.WriteLine("Total price is: "+totPrice);
             DateTime currDate = DateTime.Now;
-            Console.WriteLine(currDate);
+            Console.WriteLine(currDate.ToString());
 
         }
-
-
      }
 }

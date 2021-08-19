@@ -20,7 +20,7 @@ namespace NatureFresh
             if (JsonObject[itemInput] != null)
             {
                 var item = JsonObject[itemInput];
-                Console.WriteLine(item.GetType());
+                //Console.WriteLine(item.GetType());
                 Console.WriteLine("\nName: " + itemInput.ToUpper());
                 Console.WriteLine("Price: " + item["price"]+"/"+ item["weight"] + item["unit"]);
             }

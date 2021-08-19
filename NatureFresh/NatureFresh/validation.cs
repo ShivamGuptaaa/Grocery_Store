@@ -58,13 +58,12 @@ namespace NatureFresh
         }
 
 
-
         internal string checkWeight(string itemWeight) //to check valid item weight
         {
             bool check = Array.Exists(weightList, x => x == itemWeight); // it should be 1000gm or 500gm or 250gm or 1 bundle
             if (!check)
             {
-                Console.WriteLine("Please enter valid item weight (1000gm,500gm,250gm or 1 bundle)!");
+                Console.WriteLine("Please enter valid item weight (1000gm, 500gm, 750gm, 250gm or 1 bundle)!");
                 itemWeight = Console.ReadLine();
                 checkWeight(itemWeight);
             }
@@ -73,9 +72,8 @@ namespace NatureFresh
         }
 
 
-        internal int checkQuantity(int itemQuantity) //to check item quantity
+        internal string checkQuantity(int itemQuantity) //to check item quantity
         {
-
             if (!(itemQuantity > 0 && itemQuantity <= 10)) //range of item quantity should be between 1 to 10
             {
                 Console.WriteLine("Please enter item quantity range beetween 1-10!");
@@ -83,7 +81,7 @@ namespace NatureFresh
                 checkQuantity(itemQuantity);
             }
 
-            return itemQuantity;
+            return itemQuantity.ToString();
         }
 
 
