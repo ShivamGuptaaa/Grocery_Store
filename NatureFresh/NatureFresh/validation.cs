@@ -1,57 +1,61 @@
-﻿using System;
-using System.Text.RegularExpressions;
-
+using System;
 namespace NatureFresh
 {
     class validation
     {
-        
+
         internal string[] storeLocation = { "Panvel", "Thane", "Chembur", "Goregaon", "Dadar" };
-        internal string[] weightList = { "1000", "500" ,"250","1"};
-        
-            
+        internal string[] weightList = { "1000", "500", "250", "1" };
+
+
         internal string checkName(string name)   // to check name (if name is empty it will return 0 value,otherwise it will return name)
         {
             if (string.IsNullOrEmpty(name))
             {
-                return ("");
+                Console.WriteLine("Name can't be blank,please enter your name!");
+                name = Console.ReadLine();
+                checkName(name);
             }
-            else
+
+            return name;
+        }
+
+        internal string checkAddress(string Address)   // to check address (if address is empty it will return 0 value,otherwise it will return name)
+        {
+            if (string.IsNullOrEmpty(Address))
             {
-                return name;
+                Console.WriteLine("Address can't be blank,please enter your address!");
+                Address = Console.ReadLine();
+                checkAddress(Address);
             }
-        } 
+
+            return Address;
+        }
 
         internal string checkPhonenumber(string phoneNumber)  // to check valid mobile number
         {
-            Regex mobilePattern = new Regex("(?:(?:\\+|0{0,2})91(\\s*[\\- ]\\s*)?|[0 ]?)?[789]\\d{9}|(\\d[ -]?){10}\\d"); //mobile number should match this pattern(eg.9436728123)
-
-            if (mobilePattern.IsMatch(phoneNumber))
+            if ((phoneNumber.Length != 10) || (phoneNumber == null))
             {
-                return phoneNumber;
+                Console.WriteLine("Please enter your 10 digit mobile number!");
+                phoneNumber = Console.ReadLine();
+                checkPhonenumber(phoneNumber);
             }
-            else
-            {
-                return "";
 
-            }
+            return phoneNumber;
         }
 
 
         internal string checkPincode(string pinCode) //to check valid pincode
         {
-            Regex pinPattern = new Regex("^[1-9]{1}[0-9]{2}\\s{0, 1}[0-9]{3}$"); //pincode should match this pattern
+            if ((pinCode.Length != 6) || (pinCode == null))
+            {
+                Console.WriteLine("Wrong pincode,Please enter correct pincode!");
+                pinCode = Console.ReadLine();
+                checkPincode(pinCode);
+            }
 
-            if (pinCode.Length == 6)
-            {
-                return pinCode;
-            }
-            else
-            {
-                return "0";
-            }
+            return pinCode;
         }
-
 
 
         internal string checkWeight(string itemWeight) //to check valid item weight
@@ -59,26 +63,25 @@ namespace NatureFresh
             bool check = Array.Exists(weightList, x => x == itemWeight); // it should be 1000gm or 500gm or 250gm or 1 bundle
             if (!check)
             {
-                return "0";
+                Console.WriteLine("Please enter valid item weight (1000gm, 500gm, 750gm, 250gm or 1 bundle)!");
+                itemWeight = Console.ReadLine();
+                checkWeight(itemWeight);
             }
-            else
-            {
-                return itemWeight;
-            }
+
+            return itemWeight;
         }
 
 
-        internal int checkQuantity(int itemQuantity) //to check item quantity
+        internal string checkQuantity(int itemQuantity) //to check item quantity
         {
-           
-            if (itemQuantity > 0 && itemQuantity<=10) //range of item quantity should be between 1 to 10
+            if (!(itemQuantity > 0 && itemQuantity <= 10)) //range of item quantity should be between 1 to 10
             {
-                return itemQuantity;
+                Console.WriteLine("Please enter item quantity range beetween 1-10!");
+                itemQuantity = int.Parse(Console.ReadLine());
+                checkQuantity(itemQuantity);
             }
-            else
-            {
-                return 0;
-            }
+
+            return itemQuantity.ToString();
         }
 
 
@@ -87,17 +90,14 @@ namespace NatureFresh
             bool check = Array.Exists(storeLocation, x => x == location);  // check input location is exists in store location or not
             if (!check)
             {
-                return "";               
+                Console.WriteLine("You entered wrong store location,Please enter correct store locaton!");
+                location = Console.ReadLine();
+                checkLocation(location);
             }
-            else
-            {
-                return location;
-            }
-                
+
+            return location;
         }
-        
-        
-        
+
     }
 
 }

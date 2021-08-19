@@ -45,14 +45,14 @@ namespace NatureFresh
         }
 
         string phonenum;
-        public string phoneNum
+        public string PhoneNum
         {
             get
             { return phonenum;}
             set
             { phonenum = value; }
         }
-        int itemWeight;
+        int itemWeight=1;
         public int ItemWeight
         {
             get
@@ -76,7 +76,7 @@ namespace NatureFresh
                 unit = value;
             }
         }
-
+        
     }
     public enum Location
     {
