@@ -33,15 +33,15 @@ namespace NatureFresh
                 } 
                 else
                 {
-                    //Console.WriteLine(obj["quantity"] + "impossible" + item.Value[1]);
+                    Console.WriteLine("");
                 }
             }
             foreach(var item in newOrderList)
             {
-                Console.WriteLine($"Name:{item.Key} Weight/Unit:{item.Value[0]} X Quantity:{item.Value[1] } = {item.Value[2]}");
+                Console.WriteLine($"\nName: {item.Key} \t{item.Value[0]}\t X \t{item.Value[1] } \t=\t {item.Value[2]}");
                 totPrice += Convert.ToInt32(item.Value[2]); //Calculate total price of a order
             }
-            Console.WriteLine("Total price is: "+totPrice);
+            Console.WriteLine("\n\n\n\t\t\t\t***************Total price is: "+totPrice+"**************");
             DateTime currDate = DateTime.Now;
             Console.WriteLine(currDate.ToString());
 

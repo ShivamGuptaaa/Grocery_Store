@@ -64,7 +64,6 @@ namespace NatureFresh
             Console.Write("\nPlease choose a Location to order from these locations only -\nDadar\nThane\nPanvel\nChembur\nGoregaon: ");
             Location = validate.checkLocation(Console.ReadLine());
 
-            Console.WriteLine("done");
         }
             
     }

@@ -11,7 +11,7 @@
     "weight": "1000",
     "unit": "gram",
     "price": "35",
-    "quantity": "49000"
+    "quantity": "48000"
   },
   "tomato": {
     "id": "103",
@@ -25,7 +25,7 @@
     "weight": "1000",
     "unit": "gram",
     "price": "100",
-    "quantity": "10000"
+    "quantity": "8000"
   },
   "bharta brinjal": {
     "id": "105",
@@ -333,7 +333,7 @@
     "weight": "1",
     "unit": "pc",
     "price": "3",
-    "quantity": "167"
+    "quantity": "162"
   },
   "spring onion": {
     "id": "149",

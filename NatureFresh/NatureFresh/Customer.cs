@@ -52,34 +52,34 @@ namespace NatureFresh
             set
             { phonenum = value; }
         }
-        int itemWeight=1;
-        public int ItemWeight
-        {
-            get
-            {
-                return itemWeight;
-            }
-            set
-            {
-                itemWeight = value;
-            }
-        }
-        int unit;
-        public int Unit
-        {
-            get
-            {
-                return unit;
-            }
-            set
-            {
-                unit = value;
-            }
-        }
+        //int itemWeight=1;
+        //public int ItemWeight
+        //{
+        //    get
+        //    {
+        //        return itemWeight;
+        //    }
+        //    set
+        //    {
+        //        itemWeight = value;
+        //    }
+        //}
+        //int unit;
+        //public int Unit
+        //{
+        //    get
+        //    {
+        //        return unit;
+        //    }
+        //    set
+        //    {
+        //        unit = value;
+        //    }
+        //}
         
     }
-    public enum Location
-    {
-        Dadar, Thane, Panvel, Chembur, Goregaon
-    }
+    //public enum Location
+    //{
+    //    Dadar, Thane, Panvel, Chembur, Goregaon
+    //}
 }
