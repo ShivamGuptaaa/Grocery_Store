@@ -9,7 +9,7 @@ namespace NatureFresh
     class ItemDetails
     {
         //File path for ItemDetails.json. Modify the path according to the placement of json file.
-        private string detailsJson = @"..//..//ItemDetails.json";
+        private string detailsJson = @"..//..//Json//ItemDetails.json";
 
         //Get a Specific item(To be upgraded to constructore)
         private void _GetItem()
