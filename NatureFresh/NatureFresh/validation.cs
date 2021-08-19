@@ -1,6 +1,11 @@
 ﻿using System;
+<<<<<<< HEAD
 
 
+=======
+using System.Text.RegularExpressions;
+
+>>>>>>> 0c2939ebfc97b8b3a862700074813ddbba61aae5
 namespace NatureFresh
 {
     class validation
