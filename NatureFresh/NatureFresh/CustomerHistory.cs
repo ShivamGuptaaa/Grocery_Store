@@ -54,11 +54,11 @@ namespace NatureFresh
                 {
                     id = Id.ToString(),
                     name = Name,
+
                     date = Custdate,
                     items = Custitem,
                     total = Custtotal
                 };
-
                 string res = JsonConvert.SerializeObject(CI, Formatting.Indented);
                 File.AppendAllText(HistoryJson,res);
             }
