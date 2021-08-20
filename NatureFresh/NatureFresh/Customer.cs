@@ -73,9 +73,11 @@ namespace NatureFresh
             try
             {
                 var json = File.ReadAllText(CustomerJson).ToString();
-                Console.WriteLine(json);
-                json = json.Remove(json.Length - 1, 1);
-                Console.WriteLine(json);
+                if (json.Length == 0)
+                    json = "{";
+                else
+                    json = json.Substring(0, (json.Length - 1));
+                File.WriteAllText(CustomerJson, json);
                 CustomerDetail CD = new CustomerDetail
                 {
                     id = Id.ToString(),
@@ -86,8 +88,8 @@ namespace NatureFresh
                     phone = PhoneNum
                 };
                 string res = JsonConvert.SerializeObject(CD,Formatting.Indented);
-                //Console.WriteLine(res);
-                File.AppendAllText(CustomerJson, res+"\n}");
+                res = $"\"{Id}\": {res},";
+                File.AppendAllText(CustomerJson, res+"}");
             }
             catch (Exception ex)
             {

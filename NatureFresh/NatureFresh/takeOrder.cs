@@ -11,7 +11,7 @@ namespace NatureFresh
 
 
             validation validate = new validation();
-            ItemDetails.printItem("\n\npotato");
+            ItemDetails.printItem("potato");
             ItemDetails.printItem("orange carrot");
             ItemDetails.printItem("green peas");
             ItemDetails.printItem("onion");
