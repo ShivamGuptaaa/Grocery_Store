@@ -4,7 +4,7 @@ namespace NatureFresh
 {
     class Customer
     {
-        int id;
+        static int id=100;
         public int Id
         {
             get
@@ -12,21 +12,21 @@ namespace NatureFresh
             set
             { id = value; }
         }
-        string location;
+        static string location;
         public string Location { 
             get{return location; }
 
           set{ location = value; } 
         }
 
-        string name;
+        static string name;
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
 
-        string address;
+        static string address;
         public string Address
         {
             get
@@ -35,7 +35,7 @@ namespace NatureFresh
             { address = value; }
         }
 
-        int pincode;
+        static int pincode;
         public int Pincode
         {
             get
@@ -44,7 +44,7 @@ namespace NatureFresh
             {   pincode = value; }
         }
 
-        string phonenum;
+        static string phonenum;
         public string PhoneNum
         {
             get
@@ -52,34 +52,5 @@ namespace NatureFresh
             set
             { phonenum = value; }
         }
-        //int itemWeight=1;
-        //public int ItemWeight
-        //{
-        //    get
-        //    {
-        //        return itemWeight;
-        //    }
-        //    set
-        //    {
-        //        itemWeight = value;
-        //    }
-        //}
-        //int unit;
-        //public int Unit
-        //{
-        //    get
-        //    {
-        //        return unit;
-        //    }
-        //    set
-        //    {
-        //        unit = value;
-        //    }
-        //}
-        
     }
-    //public enum Location
-    //{
-    //    Dadar, Thane, Panvel, Chembur, Goregaon
-    //}
 }

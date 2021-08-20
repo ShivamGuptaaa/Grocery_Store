@@ -4,14 +4,14 @@
     "weight": "1000",
     "unit": "gram",
     "price": "30",
-    "quantity": "1000"
+    "quantity": "0"
   },
   "onion": {
     "id": "102",
     "weight": "1000",
     "unit": "gram",
     "price": "35",
-    "quantity": "48000"
+    "quantity": "49000"
   },
   "tomato": {
     "id": "103",
@@ -25,7 +25,7 @@
     "weight": "1000",
     "unit": "gram",
     "price": "100",
-    "quantity": "8000"
+    "quantity": "18000"
   },
   "bharta brinjal": {
     "id": "105",
@@ -95,14 +95,14 @@
     "weight": "1000",
     "unit": "gram",
     "price": "60",
-    "quantity": "5500"
+    "quantity": "19000"
   },
   "cucumber": {
     "id": "115",
     "weight": "1000",
     "unit": "gram",
     "price": "60",
-    "quantity": "0"
+    "quantity": "9750"
   },
   "ivy gourd": {
     "id": "116",
@@ -333,14 +333,14 @@
     "weight": "1",
     "unit": "pc",
     "price": "3",
-    "quantity": "162"
+    "quantity": "236"
   },
   "spring onion": {
     "id": "149",
     "weight": "1",
     "unit": "bundle",
     "price": "20",
-    "quantity": "9"
+    "quantity": "50"
   },
   "less spicy chilli": {
     "id": "150",
