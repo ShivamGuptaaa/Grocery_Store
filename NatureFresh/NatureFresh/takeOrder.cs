@@ -50,8 +50,6 @@ namespace NatureFresh
         {
             validation validate = new validation();
 
-            //Console.WriteLine("\nEnter ID");
-            //Id = int.Parse(Console.ReadLine());
             Id++;
 
             Console.WriteLine("\nEnter Your name");

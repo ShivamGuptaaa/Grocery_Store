@@ -38,8 +38,13 @@ namespace NatureFresh
             if (newOrderList.Count != 0)
             {
                 var cust = Customer.getCustomer(custId.ToString());
-                    Console.WriteLine("\n\n\nCustomer ID: " + cust["id"]);
-                    Console.WriteLine("Customer Name: " + cust["name"]);
+                Console.WriteLine("\n\n\nCustomer ID: " + cust["id"]);
+                Console.WriteLine("Customer Name: " + cust["name"]);
+                Console.WriteLine("Customer Address: "+ cust["address"]);
+                Console.WriteLine("Customer Pincode: "+ cust["pincode"]);
+                Console.WriteLine("Customer Phone: "+ cust["phone"]);
+                Console.WriteLine("Store Outlet: "+cust["location"]);
+
                 
                 foreach (var item in newOrderList)
                 {

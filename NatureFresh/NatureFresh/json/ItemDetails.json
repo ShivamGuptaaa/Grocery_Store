@@ -11,7 +11,7 @@
     "weight": "1000",
     "unit": "gram",
     "price": "35",
-    "quantity": "50000"
+    "quantity": "44000"
   },
   "tomato": {
     "id": "103",
@@ -95,7 +95,7 @@
     "weight": "1000",
     "unit": "gram",
     "price": "60",
-    "quantity": "18000"
+    "quantity": "14000"
   },
   "cucumber": {
     "id": "115",
@@ -333,7 +333,7 @@
     "weight": "1",
     "unit": "pc",
     "price": "3",
-    "quantity": "250"
+    "quantity": "239"
   },
   "spring onion": {
     "id": "149",
