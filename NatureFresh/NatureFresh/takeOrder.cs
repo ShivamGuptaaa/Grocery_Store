@@ -6,9 +6,12 @@ namespace NatureFresh
     class takeOrder:Customer
     {
         internal void setOrder(){
+            Console.Write("Enter Customer ID: ");
+            int custId = int.Parse(Console.ReadLine());
+
 
             validation validate = new validation();
-            ItemDetails.printItem("potato");
+            ItemDetails.printItem("\n\npotato");
             ItemDetails.printItem("orange carrot");
             ItemDetails.printItem("green peas");
             ItemDetails.printItem("onion");
@@ -40,7 +43,7 @@ namespace NatureFresh
             //    Console.WriteLine($"{item.Key}:     {item.Value[0]} X {item.Value[1]} ");
             //}
 
-            processOrder processOrder = new processOrder(itemLst);
+            processOrder processOrder = new processOrder(itemLst,custId);
         }
 
         internal void setCustomerDetails()
@@ -67,6 +70,7 @@ namespace NatureFresh
             Console.Write("\nPlease choose a Location to order from these locations only -\nDadar, Thane, Panvel, Chembur, Goregaon\nLocation:  ");
             Location = validate.checkLocation(Console.ReadLine());
             Console.WriteLine("\n\n");
+            CustomerWrite();
         }
             
     }

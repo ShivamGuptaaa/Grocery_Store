@@ -7,13 +7,7 @@ namespace NatureFresh
 
         static void Main(string[] args)
         {
-            //processOrder p = new processOrder();
-
-            //ItemDetails detail = new ItemDetails();
-            ////detail.GetAllItems();
-            //detail.UpdateItemStock("potato", "20000");
-            //detail.GetItem();
-            /* while (true)
+             while (true)
              {
                  Console.WriteLine("0. Entering customer details");
                  Console.WriteLine("1. To place order");
@@ -26,11 +20,7 @@ namespace NatureFresh
                  else
                      Console.WriteLine("Enter correct option");
 
-             }*/
-
-            Customer cust = new Customer();
-            cust.CustomerWrite("123","John","New York","Walker Street","999999","1234567890");
-
+             }
         }
     }
 }
