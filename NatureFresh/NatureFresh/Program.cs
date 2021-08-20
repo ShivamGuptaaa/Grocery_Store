@@ -13,20 +13,24 @@ namespace NatureFresh
             ////detail.GetAllItems();
             //detail.UpdateItemStock("potato", "20000");
             //detail.GetItem();
-            while (true)
-            {
-                Console.WriteLine("0. Entering customer details");
-                Console.WriteLine("1. To place order");
-                int option = int.Parse(Console.ReadLine());
-                takeOrder order = new takeOrder();
-                if (option == 0)
-                    order.setCustomerDetails();
-                else if (option == 1)
-                    order.setOrder();
-                else
-                    Console.WriteLine("Enter correct option");
+            /* while (true)
+             {
+                 Console.WriteLine("0. Entering customer details");
+                 Console.WriteLine("1. To place order");
+                 int option = int.Parse(Console.ReadLine());
+                 takeOrder order = new takeOrder();
+                 if (option == 0)
+                     order.setCustomerDetails();
+                 else if (option == 1)
+                     order.setOrder();
+                 else
+                     Console.WriteLine("Enter correct option");
 
-            }
+             }*/
+
+            Customer cust = new Customer();
+            cust.CustomerWrite("123","John","New York","Walker Street","999999","1234567890");
+
         }
     }
 }
