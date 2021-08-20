@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.IO;
@@ -9,7 +8,34 @@ namespace NatureFresh
     class ItemDetails
     {
         //File path for ItemDetails.json. Modify the path according to the placement of json file.
-        private string detailsJson = @"..//..//Json//ItemDetails.json";
+        public static string detailsJson = @"..//..//..//json/ItemDetails.json";
+
+
+        public static void printItem(string name)
+        {
+            var json = File.ReadAllText(detailsJson);
+            var itemInput = name;
+            var JsonObject = JObject.Parse(json);
+
+            if (JsonObject[itemInput] != null)
+            {
+                var item = JsonObject[itemInput];
+                //Console.WriteLine(item.GetType());
+                Console.WriteLine("\nName: " + itemInput.ToUpper());
+                Console.WriteLine("Price: " + item["price"]+"/"+ item["weight"] + item["unit"]);
+            }
+            else
+            {
+                Console.WriteLine("\nThe item does not exist in the menu yet!");
+            }
+        }
+        public static Newtonsoft.Json.Linq.JToken getItemObject(string itemInput)
+        {
+            var json = File.ReadAllText(detailsJson);
+            var JsonObject = JObject.Parse(json);
+            var item = JsonObject[itemInput];
+            return item;
+        }
 
         //Get a Specific item(To be upgraded to constructore)
         private void _GetItem()
@@ -40,7 +66,7 @@ namespace NatureFresh
         {
             var json = File.ReadAllText(detailsJson);
             var JsonObject = JObject.Parse(json);
-            
+
             foreach (var item in JsonObject)
             {
                 Console.WriteLine("\n" + item.Key.ToUpper());
@@ -51,7 +77,7 @@ namespace NatureFresh
             }
         }
 
-        private void _UpdateItemStock(string InputValue, string newValue)
+        public static void _UpdateItemStock(string InputValue, string newValue)
         {
             InputValue = InputValue.ToLower();
             var json = File.ReadAllText(detailsJson);
@@ -59,7 +85,7 @@ namespace NatureFresh
 
             foreach (var item in JsonObject)
             {
-                if(item.Key == InputValue)
+                if (item.Key == InputValue)
                 {
                     try
                     {
@@ -68,7 +94,7 @@ namespace NatureFresh
                         File.WriteAllText(detailsJson, output);
                         return; // Stop the function
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
                         Console.WriteLine("\nError: " + e);
                         break;
@@ -76,7 +102,7 @@ namespace NatureFresh
                 }
             }
             Console.WriteLine("\nItem not in inventory!");
-            
+
         }
 
         //public methods calling the private ones
@@ -90,10 +116,10 @@ namespace NatureFresh
             _GetAllItems();
         }
 
-        public void UpdateItemStock(string InputValue, string newValue)
-        {
-            _UpdateItemStock(InputValue, newValue);
-        }
+        //public void UpdateItemStock(string InputValue, string newValue)
+        //{
+        //    _UpdateItemStock(InputValue, newValue);
+        //}
 
 
 
