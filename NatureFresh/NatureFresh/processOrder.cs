@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace NatureFresh
 {
-    class processOrder:Customer
+    class processOrder
     {
-        internal processOrder(Dictionary<string, string[]> orderLst)
+        internal processOrder(Dictionary<string, string[]> orderLst,int custId)
         {
             Dictionary<string, string[]> newOrderList = new Dictionary<string, string[]>();     // structure (itemName,[unit,quantity,itemTotalPrice])
             int price=0;            //for individual item price
@@ -37,8 +37,10 @@ namespace NatureFresh
 
             if (newOrderList.Count != 0)
             {
-                Console.WriteLine("\n\n\nCustomer ID: " + Id);
-                Console.WriteLine("Customer Name: " + Name);
+                var cust = Customer.getCustomer(custId.ToString());
+                    Console.WriteLine("\n\n\nCustomer ID: " + cust["id"]);
+                    Console.WriteLine("Customer Name: " + cust["name"]);
+                
                 foreach (var item in newOrderList)
                 {
                     Console.WriteLine($"\n{item.Key} \t{item.Value[0]}\t X \t{item.Value[1] } \t=\t {item.Value[2]}");
