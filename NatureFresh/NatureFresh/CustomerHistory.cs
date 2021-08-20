@@ -19,7 +19,7 @@ namespace NatureFresh
 
     class CustomerHistory:Customer
     {
-        private string HistoryJson = @"..//..//..//..//..//Json//OrderHistory.json";
+        private string HistoryJson = @"..//..//..//Json//OrderHistory.json";
 
         /*public void HistoryReader()
         {

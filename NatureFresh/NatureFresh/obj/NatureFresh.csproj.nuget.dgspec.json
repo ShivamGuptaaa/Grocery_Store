@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {}
+    "C:\\Users\\dell\\Desktop\\Git projects\\Project1\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {
+    "C:\\Users\\dell\\Desktop\\Git projects\\Project1\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\Desktop\\Git projects\\Project1\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
         "projectName": "NatureFresh",
-        "projectPath": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\ext_proj Grocery Store\\NatureFresh\\NatureFresh\\obj\\",
+        "projectPath": "C:\\Users\\dell\\Desktop\\Git projects\\Project1\\Grocery_Store\\NatureFresh\\NatureFresh\\NatureFresh.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dell\\Desktop\\Git projects\\Project1\\Grocery_Store\\NatureFresh\\NatureFresh\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
