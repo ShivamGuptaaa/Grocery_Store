@@ -26,6 +26,7 @@ namespace NatureFresh
             }
             else
             {
+                Console.WriteLine(JsonObject[itemInput]);
                 Console.WriteLine("\nThe item does not exist in the menu yet!");
             }
         }

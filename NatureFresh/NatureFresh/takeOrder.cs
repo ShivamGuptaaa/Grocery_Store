@@ -6,6 +6,9 @@ namespace NatureFresh
     class takeOrder:Customer
     {
         internal void setOrder(){
+            Console.Write("Enter Customer ID: ");
+            int custId = int.Parse(Console.ReadLine());
+
 
             validation validate = new validation();
             ItemDetails.printItem("potato");
@@ -31,22 +34,23 @@ namespace NatureFresh
                 }
                 Console.WriteLine("Please choose in units in range of (max 10)");
                 itemQnty = validate.checkQuantity(int.Parse(Console.ReadLine()));
+
                 itemLst.Add(itemName,new string[]{itemWeight, itemQnty});
+                itemWeight = "1";
             }
             //foreach(var item in itemLst)
             //{
             //    Console.WriteLine($"{item.Key}:     {item.Value[0]} X {item.Value[1]} ");
             //}
 
-            processOrder processOrder = new processOrder(itemLst);
+            processOrder processOrder = new processOrder(itemLst,custId);
         }
 
         internal void setCustomerDetails()
         {
             validation validate = new validation();
 
-            Console.WriteLine("\nEnter ID");
-            Id = int.Parse(Console.ReadLine());
+            Id++;
 
             Console.WriteLine("\nEnter Your name");
             Name = validate.checkName(Console.ReadLine());
@@ -61,10 +65,10 @@ namespace NatureFresh
             PhoneNum = validate.checkPhonenumber(Console.ReadLine());
 
 
-            Console.Write("\nPlease choose a Location to order from these locations only -\nDadar\nThane\nPanvel\nChembur\nGoregaon: ");
+            Console.Write("\nPlease choose a Location to order from these locations only -\nDadar, Thane, Panvel, Chembur, Goregaon\nLocation:  ");
             Location = validate.checkLocation(Console.ReadLine());
-
-            Console.WriteLine("done");
+            Console.WriteLine("\n\n");
+            CustomerWrite();
         }
             
     }
