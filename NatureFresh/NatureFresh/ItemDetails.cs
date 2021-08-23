@@ -7,6 +7,8 @@ namespace NatureFresh
 {
     class ItemDetails
     {
+        string center = ("\n \t\t\t\t\t\t\t\t\t");
+        string center2 = ("\t\t\t\t\t\t");
         //File path for ItemDetails.json. Modify the path according to the placement of json file.
         public static string detailsJson = @"..//..//..//json/ItemDetails.json";
 
@@ -20,12 +22,14 @@ namespace NatureFresh
             if (JsonObject[itemInput] != null)
             {
                 var item = JsonObject[itemInput];
-                //Console.WriteLine(item.GetType());
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("\nName: " + itemInput.ToUpper());
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("Price: " + item["price"]+"/"+ item["weight"] + item["unit"]);
             }
             else
             {
+                Console.WriteLine(JsonObject[itemInput]);
                 Console.WriteLine("\nThe item does not exist in the menu yet!");
             }
         }
@@ -48,12 +52,14 @@ namespace NatureFresh
             if (JsonObject[itemInput] != null)
             {
                 var item = JsonObject[itemInput];
-                Console.WriteLine("\nID: " + item["id"]);
-                Console.WriteLine("Name: " + itemInput.ToUpper());
-                Console.WriteLine("Price: " + item["price"]);
-                Console.WriteLine("Quantity: " + item["quantity"]);
-                Console.WriteLine("Weight: " + item["weight"]);
-                Console.WriteLine("Unit: " + item["unit"]);
+
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine(center + itemInput.ToUpper());
+                Console.ForegroundColor = ConsoleColor.Black;
+                string Display = "| Price: " + item["price"] + " | Quantity: " + item["quantity"] + " | Weight: " + item["weight"] + " | Unit: " + item["unit"] + " |";
+                Console.WriteLine(center2 + "-----------------------------------------------------------");
+                Console.WriteLine(center2 + Display);
+                Console.WriteLine(center2 + "-----------------------------------------------------------\n\n");
             }
             else
             {
@@ -66,14 +72,16 @@ namespace NatureFresh
         {
             var json = File.ReadAllText(detailsJson);
             var JsonObject = JObject.Parse(json);
-
             foreach (var item in JsonObject)
             {
-                Console.WriteLine("\n" + item.Key.ToUpper());
-                Console.WriteLine("-Price: " + item.Value["price"]);
-                Console.WriteLine("-Quantity: " + item.Value["quantity"]);
-                Console.WriteLine("-Weight: " + item.Value["weight"]);
-                Console.WriteLine("-Unit: " + item.Value["unit"]);
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.WriteLine(center + item.Key.ToUpper());
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                string Display = "| Price: " + item.Value["price"] + " | Quantity: " + item.Value["quantity"] + " | Weight: " + item.Value["weight"] + " | Unit: " + item.Value["unit"] + " |";
+                Console.WriteLine(center2+ "-----------------------------------------------------------");
+                Console.WriteLine(center2+Display);
+                Console.WriteLine(center2+ "-----------------------------------------------------------\n\n");
             }
         }
 

@@ -1,36 +1,46 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 namespace NatureFresh
 {
     class Program
     {
-
+        //////////////////////////////////////////////////////////
+        //Change the Console Background Colour to white
+        //Right Click on title bar -> Properties -> Select Backgrund colour option on upper left -> Choose White from colour list(last colour)
+        //////////////////////////////////////////////////////////
         static void Main(string[] args)
         {
-            //processOrder p = new processOrder();
+            Console.ForegroundColor = ConsoleColor.Black;
+            VisualElements Velems = new VisualElements();
+            Portals portal = new Portals();
 
-            //ItemDetails detail = new ItemDetails();
-            ////detail.GetAllItems();
-            //detail.UpdateItemStock("potato", "20000");
-            //detail.GetItem();
-            /* while (true)
-             {
-                 Console.WriteLine("0. Entering customer details");
-                 Console.WriteLine("1. To place order");
-                 int option = int.Parse(Console.ReadLine());
-                 takeOrder order = new takeOrder();
-                 if (option == 0)
-                     order.setCustomerDetails();
-                 else if (option == 1)
-                     order.setOrder();
-                 else
-                     Console.WriteLine("Enter correct option");
+            Velems.IntroScreen();
 
-             }*/
 
-            Customer cust = new Customer();
-            cust.CustomerWrite("123","John","New York","Walker Street","999999","1234567890");
+            string center = ("\n\t\t\t\t\t\t\t\t");
+            int choice = 10;
+            while (true)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n\t\t\t\t\t\t\t\t\t Portal Selection");
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine(Velems.MainOptions);
+                Console.Write(center + "\tEnter your choice: ");
+                choice = int.Parse(Console.ReadLine());
+                if (choice == 1) portal.CustomerPanel();
+                else if (choice == 2) portal.ManagerPanel();
+                else if (choice == 0) break;
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(center + Velems.ErorrMsg);
+                }
+            }
 
         }
     }
 }
+
+//Modified Program 
+//Added Portals.cs and VisualElements.cs
+//Modified takeOrder.cs

@@ -12,7 +12,9 @@ namespace NatureFresh
         {
             if (string.IsNullOrEmpty(name))
             {
-                Console.WriteLine("Name can't be blank,please enter your name!");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nName can't be blank,please enter your name!\n");
+                Console.ForegroundColor = ConsoleColor.Black;
                 name = Console.ReadLine();
                 checkName(name);
             }
@@ -24,7 +26,9 @@ namespace NatureFresh
         {
             if (string.IsNullOrEmpty(Address))
             {
-                Console.WriteLine("Address can't be blank,please enter your address!");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nAddress can't be blank,please enter your address!\n");
+                Console.ForegroundColor = ConsoleColor.Black;
                 Address = Console.ReadLine();
                 checkAddress(Address);
             }
@@ -36,7 +40,9 @@ namespace NatureFresh
         {
             if ((phoneNumber.Length != 10) || (phoneNumber == null))
             {
-                Console.WriteLine("Please enter your 10 digit mobile number!");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nPlease enter your 10 digit mobile number!\n");
+                Console.ForegroundColor = ConsoleColor.Black;
                 phoneNumber = Console.ReadLine();
                 checkPhonenumber(phoneNumber);
             }
@@ -49,7 +55,9 @@ namespace NatureFresh
         {
             if ((pinCode.Length != 6) || (pinCode == null))
             {
-                Console.WriteLine("Wrong pincode,Please enter correct pincode!");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\nWrong pincode,Please enter correct pincode!\n");
+                Console.ForegroundColor = ConsoleColor.Black;
                 pinCode = Console.ReadLine();
                 checkPincode(pinCode);
             }
@@ -63,7 +71,9 @@ namespace NatureFresh
             bool check = Array.Exists(weightList, x => x == itemWeight); // it should be 1000gm or 500gm or 250gm or 1 bundle
             if (!check)
             {
-                Console.WriteLine("Please enter valid item weight (1000gm, 500gm, 750gm, 250gm or 1 bundle)!");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("\nPlease enter valid item weight (1000gm, 500gm, 250gm or 1 bundle)!\n");
+                Console.ForegroundColor = ConsoleColor.Black;
                 itemWeight = Console.ReadLine();
                 checkWeight(itemWeight);
             }
@@ -76,7 +86,9 @@ namespace NatureFresh
         {
             if (!(itemQuantity > 0 && itemQuantity <= 10)) //range of item quantity should be between 1 to 10
             {
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine("Please enter item quantity range beetween 1-10!");
+                Console.ForegroundColor = ConsoleColor.Black;
                 itemQuantity = int.Parse(Console.ReadLine());
                 checkQuantity(itemQuantity);
             }
@@ -90,7 +102,9 @@ namespace NatureFresh
             bool check = Array.Exists(storeLocation, x => x == location);  // check input location is exists in store location or not
             if (!check)
             {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("You entered wrong store location,Please enter correct store locaton!");
+                Console.ForegroundColor = ConsoleColor.Black;
                 location = Console.ReadLine();
                 checkLocation(location);
             }

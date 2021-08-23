@@ -3,10 +3,12 @@ using System.Collections.Generic;
 
 namespace NatureFresh
 {
-    class processOrder:Customer
+    class processOrder
     {
-        internal processOrder(Dictionary<string, string[]> orderLst)
+        VisualElements Velems = new VisualElements();
+        internal processOrder(Dictionary<string, string[]> orderLst,string custName)//changed int custID -> string custName
         {
+            Console.WriteLine("Test-ProcessOrder");
             Dictionary<string, string[]> newOrderList = new Dictionary<string, string[]>();     // structure (itemName,[unit,quantity,itemTotalPrice])
             int price=0;            //for individual item price
             int totPrice = 0;       //for total price of a order
@@ -37,17 +39,53 @@ namespace NatureFresh
 
             if (newOrderList.Count != 0)
             {
-                Console.WriteLine("\n\n\nCustomer ID: " + Id);
-                Console.WriteLine("Customer Name: " + Name);
+                Console.WriteLine("\n\n\t\t\t\t"+Velems.CutBill+"\n");
+
+                var cust = Customer.getCustomer(custName.ToString());
+
+                Console.WriteLine("\n+--------------------------------------");
+                Console.WriteLine($"| ID      | {cust["id"]}");
+                Console.WriteLine("+--------------------------------------");
+                Console.WriteLine($"| Name    | {cust["name"]}");
+                Console.WriteLine("+--------------------------------------");
+                Console.WriteLine($"| Address | {cust["address"]}");
+                Console.WriteLine("+--------------------------------------");
+                Console.WriteLine($"| Pincode | {cust["pincode"]}");
+                Console.WriteLine("+--------------------------------------");
+                Console.WriteLine($"| Phone   | {cust["phone"]}");
+                Console.WriteLine("+--------------------------------------");
+                Console.WriteLine($"| Outlet  | {cust["location"]}");
+                Console.WriteLine("+--------------------------------------\n");
+
                 foreach (var item in newOrderList)
                 {
-                    Console.WriteLine($"\n{item.Key} \t{item.Value[0]}\t X \t{item.Value[1] } \t=\t {item.Value[2]}");
+                    Console.WriteLine("\n-----------------------------------------------");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\n-"+item.Key.ToUpper());
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.WriteLine($"Grams : {item.Value[0]} gm");
+                    Console.WriteLine($"Units : {item.Value[1]} unit");
+                    Console.WriteLine($"Total : {item.Value[2]} Rs \n\n");
+
                     totPrice += Convert.ToInt32(item.Value[2]); //Calculate total price of a order
                 }
-                Console.WriteLine("\n\n\n\t\t\t\t***************Total price is: " + totPrice + "**************\n\n\n\n");
-            DateTime currDate = DateTime.Now;
-            CustomerHistory saveData = new CustomerHistory();
-            saveData.HistoryWriter(currDate.ToString(), newOrderList, totPrice.ToString());
+
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.Write("\t\t\t"+Velems.total);
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Write(totPrice);
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.Write(Velems.total2);
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n\n"+Velems.OrderComplete);
+                Console.ForegroundColor = ConsoleColor.Black;
+                DateTime currDate = DateTime.Now;
+                CustomerHistory saveData = new CustomerHistory();
+                saveData.HistoryWriter(currDate.ToString(), newOrderList, totPrice.ToString());
+                Console.WriteLine("Press Enter to Continue...");
+                Console.ReadLine();
             }
         }
      }

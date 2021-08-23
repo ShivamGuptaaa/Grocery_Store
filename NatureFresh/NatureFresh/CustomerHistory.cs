@@ -9,6 +9,7 @@ namespace NatureFresh
 {
     class CustInfo 
     {
+        //public string orderNo { get; set; }
         public string id { get; set;}
         public string name { get; set; }
         public string date { get; set; }
@@ -19,52 +20,34 @@ namespace NatureFresh
 
     class CustomerHistory:Customer
     {
-        private string HistoryJson = @"..//..//..//Json//OrderHistory.json";
+        private static string HistoryJson = @"..//..//..//Json//OrderHistory.json";
 
-        /*public void HistoryReader()
-        {
-            var json = File.ReadAllText(HistoryJson);
-            var JObj = JObject.Parse(json);
-
-            foreach (var entry in JObj)
-            {
-                Console.WriteLine("\nID: " + entry.Value["id"].ToString());
-                Console.WriteLine("Name: " + entry.Value["name"].ToString());
-                Console.WriteLine("Date: " + entry.Value["date"].ToString());
-
-                var items = entry.Value["items"];
-                Console.WriteLine("\nItems Purchased:");
-
-                foreach (var item in items)
-                {
-                    Console.WriteLine("\n\t-Name: " + item["item"]);
-                    Console.WriteLine("\t-Quantity: " + item["quantity"]);
-                    Console.WriteLine("\t-Total: " + item["total"]);
-                    Console.WriteLine("\t-Weight: " + item["weight"]);
-                }
-                Console.WriteLine("\nTotal: " + entry.Value["total"].ToString());
-            }
-        }*/
-        public void HistoryWriter(string Custdate,Dictionary<string,string[]> Custitem,string Custtotal)
+        internal void HistoryWriter(string Custdate,Dictionary<string,string[]> Custitem,string Custtotal)
         {
             try
             {
                 var json = File.ReadAllText(HistoryJson);
+                if (json.Length == 0)
+                    json = "{}";
+                else
+                    json = json.Substring(0, (json.Length - 1));
+                File.WriteAllText(HistoryJson, json);
                 CustInfo CI = new CustInfo
                 {
                     id = Id.ToString(),
-                    name = Name,
-
+                    name = Name.ToLower(),
                     date = Custdate,
                     items = Custitem,
                     total = Custtotal
                 };
+
                 string res = JsonConvert.SerializeObject(CI, Formatting.Indented);
-                File.AppendAllText(HistoryJson,res);
+                res = $"\"{Name.ToLower()}\": {res},";
+                File.AppendAllText(HistoryJson,res + "}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message.ToString());
+                Console.WriteLine("eRroR:"+ ex);
             }
         }
 

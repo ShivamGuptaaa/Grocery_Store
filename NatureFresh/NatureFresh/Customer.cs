@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -7,10 +7,24 @@ namespace NatureFresh
 {
     class Customer
     {
-        private string CustomerJson = @"..//..//..//Json//CustomerDetails.json";
+        private static string CustomerJson = @"..//..//..//Json//CustomerDetails.json";
 
-        static int id=100;
-        public int Id
+        public static int lenCounter()
+        {
+        var json = File.ReadAllText(CustomerJson);
+        var JsonObject = JObject.Parse(json);
+            if (JsonObject.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+            return JsonObject.Count;
+            }
+        }
+
+        static int id = lenCounter();
+        public static int Id
         {
             get
             { return id; }
@@ -18,21 +32,21 @@ namespace NatureFresh
             { id = value; }
         }
         static string location;
-        public string Location { 
+        public static string Location { 
             get{return location; }
 
           set{ location = value; } 
         }
 
-        static string name;
-        public string Name
+        static string name="Test 123";
+        public static string Name
         {
             get { return name; }
             set { name = value; }
         }
 
         static string address;
-        public string Address
+        public static string Address
         {
             get
             { return address; }
@@ -41,7 +55,7 @@ namespace NatureFresh
         }
 
         static int pincode;
-        public int Pincode
+        public static int Pincode
         {
             get
             { return pincode; }
@@ -50,7 +64,7 @@ namespace NatureFresh
         }
 
         static string phonenum;
-        public string PhoneNum
+        public static string PhoneNum
         {
             get
             { return phonenum;}
@@ -58,23 +72,48 @@ namespace NatureFresh
             { phonenum = value; }
         }
 
+        /*static int orderNum = 100+lenCounter();
+        public static int OrderNum
+        {
+            get
+            { return orderNum; }
+            set
+            { orderNum = value; }
+        }*/
+        public string namee = Name;
+        internal static Newtonsoft.Json.Linq.JToken getCustomer(string itemInput)
+        {
+           
+            var json = File.ReadAllText(CustomerJson);
+            var JsonObject = JObject.Parse(json);
+            var item = JsonObject[itemInput];
+            return item;
+        }
+
         //Write the above details to a function during runtime
-        internal void CustomerWrite(string Id, string Name, string Location, string Address, string Pincode, string PhoneNum)
+        internal static void CustomerWrite()
         {
             try
             {
-                var json = File.ReadAllText(CustomerJson);
+                var json = File.ReadAllText(CustomerJson).ToString();
+                if (json.Length == 0)
+                    json = "{}";
+                else
+                    json = json.Substring(0, (json.Length - 1));
+                File.WriteAllText(CustomerJson, json);
                 CustomerDetail CD = new CustomerDetail
                 {
                     id = Id.ToString(),
-                    name = Name,
+                    name = Name.ToUpper(),
                     location = Location,
                     address = Address,
                     pincode = Pincode.ToString(),
                     phone = PhoneNum
                 };
-                string res = JsonConvert.SerializeObject(CD, Formatting.Indented);
-                File.AppendAllText(CustomerJson, res);
+                string res = JsonConvert.SerializeObject(CD,Formatting.Indented);
+                res = $"\"{Name.ToLower()}\": {res},";
+                //res = $"\"{Id}\": {res},";
+                File.AppendAllText(CustomerJson, res+"}");
             }
             catch (Exception ex)
             {
