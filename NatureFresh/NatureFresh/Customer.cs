@@ -60,7 +60,6 @@ namespace NatureFresh
 
         internal static Newtonsoft.Json.Linq.JToken getCustomer(string itemInput)
         {
-           
             var json = File.ReadAllText(CustomerJson);
             var JsonObject = JObject.Parse(json);
             var item = JsonObject[itemInput];

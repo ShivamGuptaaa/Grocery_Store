@@ -18,13 +18,13 @@ namespace NatureFresh
                 {
                     if ((string)obj["unit"] == "gram")
                     {
-                        price = (totQnty / 1000) * (int)obj["price"];     //formula for finding total price of a item with unit gram
+                        price = (int)(((double)totQnty / 1000) * (double)obj["price"]);     //formula for finding total price of a item with unit gram
                     }
                     else
                     {
                         price = Convert.ToInt32(item.Value[1]) * (int)obj["price"];      //formula for finding total price of a item if unit is "pc" OR "bundle"
+                    Console.WriteLine($"Price of else is {price}");
                     }
-                    
                     newOrderList.Add(item.Key,new string[] {item.Value[0], item.Value[1], price.ToString()});       //Appends a item in new dictionary
                     int updatedStock = (int)obj["quantity"] - totQnty;
                     ItemDetails._UpdateItemStock(item.Key,updatedStock.ToString());         //decrement the stock value (existing stock - demanded quantity) and updates the json file
