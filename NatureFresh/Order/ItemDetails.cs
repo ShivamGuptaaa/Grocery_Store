@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.IO;
 
-namespace NatureFresh
+namespace Order
 {
     class ItemDetails
     {

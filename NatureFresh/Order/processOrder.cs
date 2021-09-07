@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
-namespace NatureFresh
+using Customer;
+namespace Order
 {
     class processOrder
     {
@@ -37,7 +37,7 @@ namespace NatureFresh
 
             if (newOrderList.Count != 0)
             {
-                var cust = Customer.getCustomer(custId.ToString());
+                var cust = Customer.Customer.getCustomer(custId.ToString());
                 Console.WriteLine("\n\n\nCustomer ID: " + cust["id"]);
                 Console.WriteLine("Customer Name: " + cust["name"]);
                 Console.WriteLine("Customer Address: "+ cust["address"]);

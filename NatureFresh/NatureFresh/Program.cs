@@ -1,5 +1,6 @@
 using System;
-using System.Collections.Generic;
+using Order;
+using Customer;
 namespace NatureFresh
 {
     class Program
@@ -13,8 +14,9 @@ namespace NatureFresh
                  Console.WriteLine("1. To place order");
                  int option = int.Parse(Console.ReadLine());
                  takeOrder order = new takeOrder();
+                Customer.Customer cust = new Customer.Customer();
                  if (option == 0)
-                     order.setCustomerDetails();
+                     cust.setCustomerDetails();
                  else if (option == 1)
                      order.setOrder();
                  else

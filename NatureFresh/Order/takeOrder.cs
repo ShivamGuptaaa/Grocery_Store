@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-
-namespace NatureFresh
+namespace Order
 {
-    class takeOrder:Customer
+    public class takeOrder:Customer.Customer
     {
-        internal void setOrder(){
+        public void setOrder(){
             Console.Write("Enter Customer ID: ");
             int custId = int.Parse(Console.ReadLine());
             
-            validation validate = new validation();
+            Validation validate = new Validation();
             ItemDetails.printItem("potato");
             ItemDetails.printItem("orange carrot");
             ItemDetails.printItem("green peas");
@@ -45,30 +44,7 @@ namespace NatureFresh
             processOrder processOrder = new processOrder(itemLst,custId);
         }
 
-        internal void setCustomerDetails()
-        {
-            validation validate = new validation();
-
-            Id++;
-
-            Console.WriteLine("\nEnter Your name");
-            Name = validate.checkName(Console.ReadLine());
-
-            Console.WriteLine("\nEnter Your address");
-            Address = validate.checkAddress(Console.ReadLine());
-
-            Console.WriteLine("\nEnter Your pincode");
-            Pincode = int.Parse(validate.checkPincode(Console.ReadLine()));
-
-            Console.WriteLine("\nEnter Your Mobile Number");
-            PhoneNum = validate.checkPhonenumber(Console.ReadLine());
-
-
-            Console.Write("\nPlease choose a Location to order from these locations only -\nDadar, Thane, Panvel, Chembur, Goregaon\nLocation:  ");
-            Location = validate.checkLocation(Console.ReadLine());
-            Console.WriteLine("\n\n");
-            CustomerWrite();
-        }
+        
             
     }
 }

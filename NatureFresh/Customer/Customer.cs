@@ -3,9 +3,9 @@ using Newtonsoft.Json.Linq;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace NatureFresh
+namespace Customer
 {
-    class Customer
+    public class Customer
     {
         private static string CustomerJson = @"..//..//..//Json//CustomerDetails.json";
 
@@ -58,7 +58,7 @@ namespace NatureFresh
             { phonenum = value; }
         }
 
-        internal static Newtonsoft.Json.Linq.JToken getCustomer(string itemInput)
+        public static Newtonsoft.Json.Linq.JToken getCustomer(string itemInput)
         {
             var json = File.ReadAllText(CustomerJson);
             var JsonObject = JObject.Parse(json);
@@ -67,7 +67,7 @@ namespace NatureFresh
         }
 
         //Write the above details to a function during runtime
-        internal static void CustomerWrite()
+        public static void CustomerWrite()
         {
             try
             {
@@ -95,7 +95,30 @@ namespace NatureFresh
                 Console.WriteLine(ex.Message.ToString());
             }
         }
+        public void setCustomerDetails()
+        {
+            Validation validate = new Validation();
 
+            Id++;
+
+            Console.WriteLine("\nEnter Your name");
+            Name = validate.checkName(Console.ReadLine());
+
+            Console.WriteLine("\nEnter Your address");
+            Address = validate.checkAddress(Console.ReadLine());
+
+            Console.WriteLine("\nEnter Your pincode");
+            Pincode = int.Parse(validate.checkPincode(Console.ReadLine()));
+
+            Console.WriteLine("\nEnter Your Mobile Number");
+            PhoneNum = validate.checkPhonenumber(Console.ReadLine());
+
+
+            Console.Write("\nPlease choose a Location to order from these locations only -\nDadar, Thane, Panvel, Chembur, Goregaon\nLocation:  ");
+            Location = validate.checkLocation(Console.ReadLine());
+            Console.WriteLine("\n\n");
+            CustomerWrite();
+        }
     }
     class CustomerDetail {
 

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
-namespace NatureFresh
+namespace Customer
 {
-    class CustInfo 
+    public class CustInfo 
     {
         public string id { get; set;}
         public string name { get; set; }
@@ -17,7 +17,7 @@ namespace NatureFresh
     }
 
 
-    class CustomerHistory:Customer
+    public class CustomerHistory:Customer
     {
         private string HistoryJson = @"..//..//..//Json//OrderHistory.json";
 
